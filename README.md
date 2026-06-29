@@ -61,18 +61,22 @@ cinematics) sit on top of a content-complete, offline-first core that works with
 stripped. Outstanding items are content/credentials only Daniel can supply — see `TODO-DANIEL.md`.
 
 ## Run locally
-The PWA service worker and any ES modules need to be served over HTTP (not opened as `file://`).
-From the project root:
+The PWA service worker and the ES modules need to be served over HTTP (not opened as `file://`).
 
+**Easiest — one click:** double-click **`start-local.cmd`** (Windows). It starts a tiny local
+server and opens the hub in your browser. `Ctrl+C` in the window to stop. *(`start-local.cmd` +
+`dev-server.js` are local-only dev tools — git-ignored, not deployed.)*
+
+**Or from a terminal:**
 ```bash
-# Python (built-in)
-python -m http.server 8080
-# or Node
+node dev-server.js          # serves the folder + opens the browser
+# or, without the helper:
+python -m http.server 8080  # then open http://localhost:8080/
 npx serve -l 8080
 ```
 
-Then open <http://localhost:8080/>. To exercise offline: load the site once, then in DevTools →
-Application → Service Workers tick **Offline** (or stop the server) and reload — it keeps working.
+To exercise **offline**: load the site once, then in DevTools → Application → Service Workers tick
+**Offline** (or stop the server) and reload — it keeps working.
 
 ## Deploy (unlisted)
 See **`DEPLOY.md`** for step-by-step GitHub Pages / Netlify instructions and the honest note on
