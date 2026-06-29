@@ -1,0 +1,40 @@
+# ── OS / editor / tool cruft ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.code-workspace
+.claude/settings.local.json
+
+# ── Local dev tools (not part of the deployed site) ─────────────────
+dev-server.js
+start-local.cmd
+start-local.sh
+
+# ── Source & working material — kept on disk, NOT published ─────────
+# The built site is self-contained; these are inputs/backups only.
+# Delete the lines you'd rather version-control (e.g. in a PRIVATE repo).
+# root-level source images (the PWA icons in assets/icons/ are still published)
+*.docx
+*.zip
+*.py
+/*.png
+build-spec.json
+mc-data.json
+
+# original app revisions — canonical apps are build-lab.html / masterclass.html
+sa-trophy-truck-*.html
+mcd-masterclass-shed.html
+
+# loose source schematics at the repo root (copies live in notebook/schematics/)
+/*.svg
+
+# source notes / briefs that seed the Notebook (not served)
+*.md
+
+# …but DO publish the project docs and the brand favicon
+!README.md
+!DECISIONS.md
+!DEPLOY.md
+!TODO-DANIEL.md
+!ACCEPTANCE.md
+!favicon.svg

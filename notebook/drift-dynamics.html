@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>Designed to drive sideways — Engineering Notebook | STUDIO</title>
+<meta name="description" content="The engineering case for a blank-sheet drift chassis: friction circle, camber curves, dynamic toe, anti-squat and weight balance placed exactly where the physics wants them.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designed to drive sideways">
+<meta property="og:description" content="The geometry of a blank-sheet drift chassis, from first principles.">
+<meta property="og:image" content="../assets/icons/icon-512.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.json">
+<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<link href="../assets/css/studio.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="v-tuner">
+<div class="progress-bar" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/></linearGradient></defs><path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a href="index.html">Notebook</a>
+      <a href="../driftcast/index.html">DriftCast</a>
+      <a href="../driftcast/configurator.html">Configurator</a>
+      <a class="cta" href="../index.html">Hub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article class="wrap article">
+    <header class="article-head">
+      <a href="index.html" class="eyebrow" style="text-decoration:none">← Engineering Notebook</a>
+      <h1 data-split>Designed to drive sideways</h1>
+      <p class="dek">Most drift kits are corrections bolted onto geometry that was never meant to slide. This is
+        the engineering case for the opposite approach — designing every hardpoint from scratch so the car
+        <em>wants</em> to grip and drive at high slip angle, with the camber curves, dynamic toe, anti-squat and
+        weight balance placed exactly where the physics wants them.</p>
+      <div class="article-meta">
+        <span class="tag vert">driftcast</span>
+        <span class="tag">geometry</span><span class="tag">anti-squat</span><span class="tag">dynamic-toe</span>
+        <span class="confidence">⚑ Starting reference ranges — validate with testing</span>
+      </div>
+    </header>
+
+    <div class="prose">
+      <h2>The real goal: grip and drive at high slip angle</h2>
+      <p>Everyone gets this backwards. The engineering battle isn't making the car <em>slide</em> — it's making
+        it <b>bite and drive while already sideways</b>, and stay predictable through transitions. That demands
+        huge usable steering angle, a flat low-roll platform for repeatable contact, and deliberate weight
+        transfer — including controlled squat to plant the rear — all underpinned by a low, central CG and a
+        wide track. Frame it this way and it reorders every downstream decision around the contact patch.</p>
+
+      <h2>The friction circle while drifting — the physics budget</h2>
+      <p>A drifting rear tyre is at huge slip angle <em>and</em> being driven, sitting right at the edge of its
+        friction circle. Total force is capped at roughly <code>μ × N</code> (grip coefficient × vertical load),
+        and that budget is split between holding the slide (side force) and driving the car (forward force).</p>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/rear-traction-geometry.svg" alt="Rear traction geometry diagram showing the friction circle of a driven rear tyre at high slip angle, with the available grip budget split between lateral (side) force and longitudinal (drive) force.">
+        <figcaption>// The friction circle: total grip ≈ μ × N, split between holding the slide and driving the car.</figcaption>
+      </figure>
+      <p>"Drive while sliding" comes from three things, in order: make the circle bigger (more N on the rear,
+        more μ from compound/temp/contact patch); use <b>both</b> rear tyres via a locked or 2-way diff; and
+        keep margin — a lighter car spends less of the circle moving its own mass, leaving more for drive
+        <em>and</em> control. Everything below is how to maximise N, μ and consistency at that contact patch.</p>
+
+      <h2>Front geometry — angle, self-steer and catchability built in</h2>
+      <ul>
+        <li><b>Caster high, ~+5° to +12°.</b> Drives self-centring through transitions so the driver steers
+          with throttle and clutch and lets geometry return the wheel. More caster = faster return, at the cost
+          of heavier steering and more camber gain.</li>
+        <li><b>Camber aggressive, ~−4° to −7°,</b> set so the lead wheel reaches roughly 0° effective camber at
+          ~¾ lock — where grip is needed at angle.</li>
+        <li><b>Ackermann reduced, zero or reversed</b> (driver preference). Stock positive Ackermann scrubs the
+          inner tyre at big angle; cutting it ~10–15% gains steering angle without scrub.</li>
+        <li><b>60°+ steering angle</b> designed in from scratch — not retrofitted with an angle kit — with
+          <b>bump steer cleaned up through the whole angle range</b>. A bad kit gives angle but terrible bump
+          steer.</li>
+      </ul>
+
+      <h2>Rear geometry — a flat contact patch under load</h2>
+      <p>Grip is maximised when the loaded tyre sits flat, so design the camber <em>curve</em> so the tyre is
+        flat exactly when it's loaded, squatted and driving — on a clean sheet you design this directly instead
+        of inheriting a donor's.</p>
+      <ul>
+        <li><b>Static rear camber slightly positive, ~+0.5° to +1°.</b> Power-squat pulls the rear negative, so
+          static positive cancels it and the loaded, driving tyre ends up flat = maximum patch = maximum drive.</li>
+        <li><b>Static rear toe-in, ~0.5–2 mm/wheel</b> (high-power cars push further) for forward grip and
+          stability under throttle — but excess toe stresses the driveline, so test carefully.</li>
+        <li><b>Anti-squat tuned for controlled power squat</b> — a soft rear that deliberately squats plants
+          weight over the rear for drive. Note: subframe/pickup height changes anti-squat <em>and</em> roll
+          centre together.</li>
+      </ul>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/dynamic-toe-camber.svg" alt="Diagram of the rear camber and dynamic-toe curves through suspension travel, showing the tyre reaching flat (0 degrees effective camber) and toeing in as it compresses under power-squat.">
+        <figcaption>// The two coupled curves: camber goes flat and toe goes in exactly as the rear squats under power.</figcaption>
+      </figure>
+
+      <h2>Dynamic toe — the "rumour" that's real, and why it works</h2>
+      <p>The rear can be set up to toe <b>in</b> as it squats under acceleration — adding stability and drive
+        exactly when you're on the power, and backing off on lift for initiation. Two routes: the OEM
+        <b>elastokinematic</b> way (Nissan multilink bushings deliberately deflect under drive — clever, but
+        bushing-soft means vague and inconsistent) versus the race-correct <b>geometric</b> way (position the
+        toe link so compression geometrically toes the wheel in; rigid rod ends, repeatable). We engineer the
+        geometric version.</p>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/rear-toe-in-slide.svg" alt="Plan-view diagram of a car in a slide showing the loaded outer rear wheel toed in, aiming its tractive thrust vector inboard into the corner, with the arrow/fletching stability effect resisting the rear swinging out.">
+        <figcaption>// Why toe-in drives the car out: the loaded outer rear aims its thrust into the corner, and the rear resists swinging wide.</figcaption>
+      </figure>
+      <p>Toe-in works through two stacking mechanisms: the arrow/fletching effect (the rear resists swinging
+        out, so you dare to load it) and the loaded outer rear aiming its tractive thrust <em>inboard into the
+        corner</em>, driving the car around with a gentle yaw-restoring moment. Keep it per-wheel and geometric,
+        not mechanically coupled across the axle — the tyre doing the driving gets the most aim-into-drive.
+        Another tick for IRS over a solid axle. The caveat: too much over-stabilises — the car won't rotate and
+        the rears scrub, heat and drag. Keep it modest.</p>
+
+      <h2>Anti-squat — the most misunderstood lever, stated precisely</h2>
+      <p><b>Myth:</b> more anti-squat (or more squat) loads the rear tyre for more grip. <b>Reality:</b>
+        anti-geometry does <em>not</em> change the rear's vertical load — that total is fixed by
+        <code>CG height × acceleration ÷ wheelbase</code>, full stop. What anti-squat changes is how much load
+        goes through the springs versus the links, and the car's pitch attitude.</p>
+      <p>Its grip benefit is indirect but real: controlled anti-squat stops the rear squatting through travel,
+        keeping camber, toe and roll-centre where you designed them (consistent patch = consistent drive) and
+        stops wallow and bottoming. Two failure modes — too low wallows; too high "jacks up" and unloads the
+        tyres. Target moderate. And because anti-squat, the dynamic-toe curve and the camber curve are all
+        functions of the <em>same</em> rear-link geometry, designing every pickup from scratch is the only way
+        to get all three right at once.</p>
+
+      <h2>Load transfer, sway bars, and "load the rear"</h2>
+      <p>Tyre grip is <b>load-sensitive</b> — the coefficient drops as load rises — so a pair sharing load
+        evenly grips more than an unevenly-loaded pair. The rule for maximum rear drive follows: <b>soft rear
+        roll stiffness, minimal-to-no rear ARB</b> → less lateral load transfer across the rear axle → both
+        rears stay evenly loaded → more total rear grip.</p>
+      <blockquote>Sway bars do <b>not</b> shift weight front/rear — they distribute lateral load transfer in
+        roll. A stiff rear bar <em>reduces</em> rear grip (uneven loading) = more oversteer. That's the opposite
+        of "load the rear." Soften or remove the front bar for more front grip and turn-in. Net classic balance:
+        a planted soft rear and a grippier front.</blockquote>
+
+      <h2>Rear architecture, and catchable angle without scrubbing the front</h2>
+      <p>On architecture: semi-trailing is compromised (poor camber, uncontrollable toe); strut is limited;
+        factory multilink is good but built around elastokinematics and hard to re-tune via link length;
+        <b>double-wishbone + a dedicated toe link gives full control of every curve</b> — the trophy-truck front
+        applied to the drift rear; a well-located solid-axle 4-link is constant-camber, strong and cheap but
+        high unsprung mass with coupled wheels. Recommendation: double-wishbone + toe-link IRS for the pro
+        platform, solid axle as the grassroots option. Static rear bias lands around <b>~52–57%</b> — the drift
+        sweet spot; too much starves the front of grip for angle.</p>
+      <p>Make big angle catchable not by bleeding front grip with full-lock scrub, but by exploiting that on
+        throttle a RWD car naturally loads the rear and unloads the front — throttle-adaptive, no scrub. Stack
+        static rear bias, throttle-on front unload, and progressive front geometry so the front gives up grip
+        <em>predictably</em> (a sudden front hook is what snaps a slide into a spin). The honest trade: rear
+        bias unloads the front at <em>every</em> angle (costing some mid-angle bite) while scrub only cuts grip
+        at full lock — so use both in proportion, and don't over-bias rearward or the car can't arrest yaw
+        either.</p>
+
+      <div class="takeaways">
+        <h3>Key takeaways</h3>
+        <ul>
+          <li>Drift engineering is about making the car <b>grip and drive at high slip angle</b> — the whole rear end hangs off maximising and stabilising the rear contact patch.</li>
+          <li>Rear vertical load is fixed by <b>CG height × acceleration ÷ wheelbase</b> — not by anti-squat, springs or sway bars. A stiff rear bar makes the car looser, not grippier.</li>
+          <li>Slight <b>static positive rear camber</b> plus a designed camber curve keeps the loaded, squatted tyre flat; <b>geometric dynamic toe-in</b> adds drive-bite exactly on throttle.</li>
+          <li>A from-scratch chassis is the biggest lever: anti-squat, dynamic toe and camber curve are all functions of the same rear-link geometry.</li>
+          <li>Make angle catchable by building the rear to <b>want</b> to drive and letting the front give up grip progressively and on-throttle — scrub becomes a full-lock fine-tune.</li>
+        </ul>
+      </div>
+
+      <div class="callout-box flag" style="margin-top:24px">
+        <p style="margin:0; font-size:14px; color:var(--ink-2)"><b style="color:var(--gold-straw)">Honesty notes.</b>
+          All numbers here are starting reference ranges — practitioner/aftermarket-sourced and
+          driver-preference-dependent, to validate with testing, not absolutes. Rear bias appears as ~52–57%
+          across sources. The IRS-vs-solid-axle and front-suspension-type calls are open design forks. Excess
+          static or dynamic toe is a driveline-stress and twitchiness risk — keep it modest.</p>
+      </div>
+
+      <p style="margin-top:30px"><a class="btn" href="index.html">← All Notebook articles</a>
+        <a class="btn btn-ghost" href="../driftcast/index.html" style="margin-left:10px">The DriftCast platform →</a></p>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div><span class="brand" style="font-size:16px"><svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span></div>
+    <div class="meta"><div class="tagline">Numbers as beauty.</div></div>
+  </div>
+</footer>
+
+<script src="../assets/lib/gsap.min.js"></script>
+<script src="../assets/lib/ScrollTrigger.min.js"></script>
+<script src="../assets/lib/lenis.min.js"></script>
+<script type="module" src="../assets/motion/studio.js"></script>
+</body>
+</html>

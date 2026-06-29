@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>Engineering Notebook | STUDIO</title>
+<meta name="description" content="Deep, original technical write-ups — roll control, bypass tuning, drift geometry, weight and balance — with inline schematics and honest confidence flags.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Engineering Notebook — STUDIO">
+<meta property="og:description" content="Original technical write-ups with inline schematics. Built from the numbers.">
+<meta property="og:image" content="../assets/icons/icon-512.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/icons/icon-180.png">
+<link rel="manifest" href="../manifest.json">
+<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<link href="../assets/css/studio.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/></linearGradient></defs><path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a aria-current="page" href="index.html">Notebook</a>
+      <a href="../trophy-truck.html">Trophy Truck</a>
+      <a href="../driftcast/index.html">DriftCast</a>
+      <a class="cta" href="../index.html">Hub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap" style="max-width:820px" data-reveal-children>
+      <span class="eyebrow">Engineering Notebook</span>
+      <h1 data-split>The reasoning,<br><span class="lit">written down.</span></h1>
+      <p class="lead">Original technical write-ups — the actual engineering behind the builds, with inline
+        schematics and honest confidence flags. This is the part you come back to.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="lib">
+    <div class="wrap">
+      <h2 id="lib" class="visually-hidden">Articles</h2>
+      <div class="nb-filters" role="group" aria-label="Filter by vertical" data-reveal>
+        <button data-f="all" aria-pressed="true">All</button>
+        <button data-f="trophy-truck" aria-pressed="false">Trophy Truck</button>
+        <button data-f="driftcast" aria-pressed="false">DriftCast</button>
+      </div>
+      <div id="nbGrid" class="nb-grid" aria-live="polite"></div>
+      <noscript>
+        <div class="nb-grid">
+          <a class="nb-card" href="roll-control.html"><span class="tag vert">trophy-truck</span><h3>Holding roll without the waddle</h3><p>Bypass internals, cross-linked hydraulic roll control, and the honest minimum system.</p></a>
+          <a class="nb-card" href="drift-dynamics.html"><span class="tag vert">driftcast</span><h3>Designed to drive sideways</h3><p>The engineering case for a blank-sheet drift chassis.</p></a>
+        </div>
+      </noscript>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div><span class="brand" style="font-size:16px"><svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span>
+      <p>Deep technical writing — the reason to come back.</p></div>
+    <div class="meta"><div class="tagline">Numbers as beauty.</div><div style="margin-top:8px"><a href="../index.html">← back to the hub</a></div></div>
+  </div>
+</footer>
+
+<script type="module">
+  import { articles } from '../assets/data/articles.js';
+  const esc = (s) => String(s ?? '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const grid = document.getElementById('nbGrid');
+  const card = (a) => {
+    const tags = a.tags.slice(0, 3).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+    const inner = `
+      <div class="article-meta" style="margin-top:0">
+        <span class="tag vert">${esc(a.vertical)}</span>${tags}
+      </div>
+      <h3>${esc(a.title)}</h3>
+      <p>${esc(a.summary)}</p>
+      ${a.confidence ? `<span class="confidence" style="margin-top:14px">${esc(a.confidence)}</span>` : ''}
+      ${a.status === 'stub' ? '<span class="tag" style="margin-top:14px; align-self:flex-start">In development</span>'
+        : `<span class="go" style="margin-top:14px; font-family:var(--head); text-transform:uppercase; letter-spacing:.1em; font-weight:600; font-size:13px; color:var(--gold-straw)">Read →</span>`}`;
+    return a.status === 'published'
+      ? `<a class="nb-card" href="${esc(a.slug)}.html">${inner}</a>`
+      : `<div class="nb-card stub">${inner}</div>`;
+  };
+  const tabs = document.querySelectorAll('.nb-filters button');
+  function render(f) {
+    const list = f === 'all' ? articles : articles.filter(a => a.vertical === f);
+    // published first
+    list.sort((a, b) => (a.status === b.status) ? 0 : a.status === 'published' ? -1 : 1);
+    grid.innerHTML = list.map(card).join('');
+    tabs.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === f)));
+  }
+  tabs.forEach(b => b.addEventListener('click', () => render(b.dataset.f)));
+  render('all');
+</script>
+</body>
+</html>

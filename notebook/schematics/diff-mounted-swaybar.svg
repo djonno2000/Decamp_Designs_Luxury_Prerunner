@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="600" fill="#f7f8fa"/>
+
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Anti-roll bar mounting on a solid axle: chassis vs diff/axle</text>
+  <text x="500" y="50" text-anchor="middle" font-size="12.5" fill="#64748b">rear view, schematic — not to scale</text>
+
+  <line x1="500" y1="70" x2="500" y2="470" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ================= PANEL A: CHASSIS-MOUNTED ================= -->
+  <text x="265" y="90" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1e293b">Chassis-mounted bar + long drop links</text>
+
+  <!-- chassis crossmember -->
+  <rect x="120" y="110" width="290" height="20" rx="3" fill="#334155"/>
+  <text x="265" y="124" text-anchor="middle" font-size="11.5" fill="#e2e8f0">chassis crossmember</text>
+
+  <!-- bar mounts to crossmember -->
+  <line x1="205" y1="130" x2="205" y2="150" stroke="#1e293b" stroke-width="5"/>
+  <line x1="325" y1="130" x2="325" y2="150" stroke="#1e293b" stroke-width="5"/>
+  <!-- lateral bar (end-on, drawn as a beam) -->
+  <line x1="150" y1="150" x2="380" y2="150" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="150" cy="150" r="6" fill="#1e293b"/>
+  <circle cx="380" cy="150" r="6" fill="#1e293b"/>
+  <text x="265" y="167" text-anchor="middle" font-size="11" fill="#475569">torsion bar (on chassis)</text>
+
+  <!-- long drop links to axle, slightly bowed = flex -->
+  <path d="M150,156 Q140,260 156,360" fill="none" stroke="#1e293b" stroke-width="5"/>
+  <path d="M380,156 Q392,260 374,360" fill="none" stroke="#1e293b" stroke-width="5"/>
+
+  <!-- axle -->
+  <rect x="120" y="360" width="290" height="16" rx="3" fill="#475569"/>
+  <rect x="240" y="344" width="50" height="48" rx="4" fill="#334155"/>
+  <text x="265" y="373" text-anchor="middle" font-size="10.5" fill="#e2e8f0">diff</text>
+
+  <!-- wheels -->
+  <circle cx="150" cy="368" r="34" fill="none" stroke="#475569" stroke-width="9"/>
+  <circle cx="380" cy="368" r="34" fill="none" stroke="#475569" stroke-width="9"/>
+
+  <!-- callouts A -->
+  <text x="56" y="238" text-anchor="start" font-size="11.5" fill="#b91c1c" font-weight="600">long links flex &amp; add lash</text>
+  <text x="56" y="252" text-anchor="start" font-size="11.5" fill="#b91c1c">under load → mushy,</text>
+  <text x="56" y="266" text-anchor="start" font-size="11.5" fill="#b91c1c">less repeatable roll</text>
+  <line x1="108" y1="282" x2="148" y2="300" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#arrowR)"/>
+
+  <text x="265" y="445" text-anchor="middle" font-size="11.5" fill="#475569">Bar high on chassis; links span the full travel</text>
+  <text x="265" y="461" text-anchor="middle" font-size="11.5" fill="#475569">down to the axle. Roll path: chassis → long links → axle.</text>
+
+  <!-- ================= PANEL B: AXLE/DIFF-MOUNTED ================= -->
+  <text x="735" y="90" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1e293b">Diff/axle-mounted bar + short links — MCD / Kirby</text>
+
+  <!-- high chassis rail (reference) -->
+  <rect x="600" y="110" width="270" height="18" rx="3" fill="#334155"/>
+  <text x="735" y="123" text-anchor="middle" font-size="11" fill="#e2e8f0">chassis (upper)</text>
+
+  <!-- struts down to lower chassis pickup -->
+  <line x1="668" y1="128" x2="668" y2="250" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="802" y1="128" x2="802" y2="250" stroke="#94a3b8" stroke-width="2"/>
+  <!-- lower chassis link-mount member -->
+  <rect x="640" y="250" width="190" height="13" rx="3" fill="#64748b"/>
+  <text x="735" y="246" text-anchor="middle" font-size="10.5" fill="#475569">lower-chassis pickup (close to axle)</text>
+
+  <!-- axle -->
+  <rect x="600" y="360" width="270" height="16" rx="3" fill="#475569"/>
+  <rect x="710" y="344" width="50" height="48" rx="4" fill="#334155"/>
+  <text x="735" y="373" text-anchor="middle" font-size="10.5" fill="#e2e8f0">diff</text>
+
+  <!-- bar clamped to pumpkin -->
+  <line x1="690" y1="340" x2="780" y2="340" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  <line x1="724" y1="340" x2="724" y2="348" stroke="#0f172a" stroke-width="3"/>
+  <line x1="746" y1="340" x2="746" y2="348" stroke="#0f172a" stroke-width="3"/>
+  <circle cx="690" cy="340" r="5.5" fill="#1e293b"/>
+  <circle cx="780" cy="340" r="5.5" fill="#1e293b"/>
+
+  <!-- short stout links up to lower chassis pickup -->
+  <line x1="690" y1="335" x2="668" y2="263" stroke="#1e293b" stroke-width="7" stroke-linecap="round"/>
+  <line x1="780" y1="335" x2="802" y2="263" stroke="#1e293b" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- wheels -->
+  <circle cx="600" cy="368" r="34" fill="none" stroke="#475569" stroke-width="9"/>
+  <circle cx="870" cy="368" r="34" fill="none" stroke="#475569" stroke-width="9"/>
+
+  <!-- callouts B -->
+  <line x1="822" y1="306" x2="796" y2="298" stroke="#15803d" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="828" y="290" text-anchor="start" font-size="11.5" fill="#15803d" font-weight="600">short, stout</text>
+  <text x="828" y="304" text-anchor="start" font-size="11.5" fill="#15803d">links → stiff,</text>
+  <text x="828" y="318" text-anchor="start" font-size="11.5" fill="#15803d">direct, repeatable</text>
+
+  <line x1="735" y1="410" x2="735" y2="392" stroke="#b45309" stroke-width="1.4" marker-end="url(#arrowR)"/>
+  <text x="735" y="424" text-anchor="middle" font-size="11" fill="#b45309" font-weight="600">bar bolts to housing = unsprung mass + needs spool clearance</text>
+
+  <text x="735" y="445" text-anchor="middle" font-size="11.5" fill="#475569">Bar on the axle module; short links to nearby pickups.</text>
+  <text x="735" y="461" text-anchor="middle" font-size="11.5" fill="#475569">Whole rear builds &amp; unbolts as one unit.</text>
+
+  <!-- ================= FOOTER: REALITY CHECK ================= -->
+  <rect x="40" y="492" width="920" height="92" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.2"/>
+  <text x="58" y="514" text-anchor="start" font-size="13" font-weight="700" fill="#9a3412">Reality check — this is not a kinematic free lunch</text>
+  <text x="58" y="534" text-anchor="start" font-size="11.5" fill="#7c2d12">Axle-to-chassis motion is the same whichever body the bar bolts to. Build both with equivalent arm/link geometry and they behave</text>
+  <text x="58" y="550" text-anchor="start" font-size="11.5" fill="#7c2d12">identically through travel — host-body choice is no magic lever. The real gains are a short, stiff, low-compliance link path and a tidy</text>
+  <text x="58" y="566" text-anchor="start" font-size="11.5" fill="#7c2d12">self-contained module. The price is unsprung mass (bar + links now hang on the axle) and spool/third-member clearance. And shorter</text>
+  <text x="58" y="578" text-anchor="start" font-size="11.5" fill="#7c2d12">links aren't automatically more linear — cycle full travel and check motion ratio / over-centre at both extremes.</text>
+</svg>

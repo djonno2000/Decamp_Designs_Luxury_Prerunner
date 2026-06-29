@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>STUDIO — Built from the numbers</title>
+<meta name="description" content="A South Australian fabrication studio. Trophy-truck build tools, the MCD Masterclass, and the DriftCast modular drift platform — every project built from the real engineering numbers.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="STUDIO — Built from the numbers">
+<meta property="og:description" content="Trophy-truck build tools, the MCD Masterclass, and the DriftCast modular drift platform.">
+<meta property="og:image" content="assets/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="manifest" href="manifest.json">
+
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+<link href="assets/css/studio.css" rel="stylesheet">
+
+<!-- progressive-enhancement guard: only hide reveal elements once JS is present -->
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true">
+        <defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/>
+        </linearGradient></defs>
+        <path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a href="trophy-truck.html">Trophy Truck</a>
+      <a href="driftcast/index.html">DriftCast</a>
+      <a href="notebook/index.html">Notebook</a>
+      <a class="cta" href="#doorways">Enter</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1" data-ambience="dust">
+    <div class="wrap hero-grid">
+      <div data-reveal-children>
+        <span class="eyebrow">South Australia · Fabrication Studio</span>
+        <h1 id="h1" data-split>Built<br>from the<br><span class="lit">numbers.</span></h1>
+        <p class="lead">A trophy-truck and drift-platform workshop where the engineering <em>is</em> the design.
+          No stock renders — every tool, page and part is generated from the real build data.</p>
+        <div class="hero-meta" aria-label="Flagship build, at a glance">
+          <span class="chip"><b>Finke</b><span class="u">Extreme 2WD</span></span>
+          <span class="chip"><b>Supercharged</b><span class="u">LS</span></span>
+          <span class="chip mono"><b>37"</b><span class="u">Kenda M/T2</span></span>
+          <span class="chip"><b>Road</b><span class="u">registered</span></span>
+        </div>
+      </div>
+
+      <!-- CAD title-block: real chassis numbers as the hero visual -->
+      <aside class="titleblock ticks" aria-label="Chassis specification, MCD1 prerunner" data-reveal style="--i:2">
+        <div class="tbhead">
+          <h3>MCD1 · Spaceframe</h3>
+          <span class="id">REV&nbsp;A · mm</span>
+        </div>
+        <div class="tbrows">
+          <div class="tbrow"><span class="k">Overall length</span><span class="v">4,900</span></div>
+          <div class="tbrow"><span class="k">Wheelbase</span><span class="v">3,050</span></div>
+          <div class="tbrow"><span class="k">Track — front</span><span class="v">2,030</span></div>
+          <div class="tbrow"><span class="k">Track — rear</span><span class="v">1,850</span></div>
+          <div class="tbrow"><span class="k">Cage width</span><span class="v">1,765</span></div>
+          <div class="tbrow"><span class="k">Tyre — loaded</span><span class="v">~35.5–36 <small>in</small></span></div>
+        </div>
+        <p class="tbnote">// figures drive the 3D spaceframe — Phase 4</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 3D SPACEFRAME FLY-THROUGH — enhancement only; the cards below are the resilient core.
+       Degrades to a static SVG engineering still on no-WebGL / low-tier / reduced-motion. -->
+  <section class="sf-section" data-hero data-chassis="truck"
+    aria-label="Spaceframe assembly — scroll to build the chassis from its real coordinates">
+    <div class="sf-stage" data-hero-stage>
+      <div class="sf-canvas" data-hero-canvas></div>
+      <div class="sf-fallback" data-hero-fallback hidden></div>
+      <div class="sf-overlay">
+        <div class="sf-eyebrow"><span class="eyebrow">Built from the numbers — literally</span></div>
+        <div class="sf-callouts">
+          <span class="callout"><span class="line"></span>4,900 mm length</span>
+          <span class="callout"><span class="line"></span>3,050 mm wheelbase</span>
+          <span class="callout"><span class="line"></span>37" tyres seated</span>
+        </div>
+        <div class="sf-hint">Scroll to assemble</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOORWAYS -->
+  <section id="doorways" aria-labelledby="dh">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow">The workshop</span>
+        <h2 id="dh">Two tools, live now</h2>
+        <div class="rule"></div>
+        <p>Both run fully offline once installed — open them at the bench with zero internet.</p>
+      </div>
+
+      <div class="doorways" data-reveal-children>
+        <a class="door live ticks" href="build-lab.html">
+          <span class="badge live">Live</span>
+          <span class="num">01 / TOOL</span>
+          <h3>Build Lab</h3>
+          <p>Structural calculator and 3D chassis lab — tube loads, torsional &amp; beaming stiffness, body-bay fit checks and a live wireframe of the frame.</p>
+          <span class="go">Open the lab
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+        <a class="door live ticks" href="masterclass.html">
+          <span class="badge live">Live</span>
+          <span class="num">02 / KNOWLEDGE</span>
+          <h3>MCD Masterclass</h3>
+          <p>The shed companion: every build decision sourced, explained and cross-referenced — drivelines, suspension, panels and the reasoning behind each call.</p>
+          <span class="go">Open the masterclass
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE THE PLATFORM -->
+  <section id="driftcast" aria-labelledby="rh">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow">Explore the platform</span>
+        <h2 id="rh">The builds &amp; the knowledge</h2>
+        <div class="rule"></div>
+        <p>The flagship desert truck, the modular drift platform, and the engineering notebook behind both.</p>
+      </div>
+
+      <div class="roadmap" data-reveal-children>
+        <a class="rm live ticks" href="trophy-truck.html" aria-label="Trophy Truck">
+          <span class="num">03 / BUILD</span>
+          <h3>Trophy Truck</h3>
+          <p>The flagship desert build — a $1,000 spaceframe to a road-registered Finke finisher, told from the real engineering.</p>
+          <span class="go">Open the build <svg width="16" height="11" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="rm live ticks" href="driftcast/index.html" aria-label="DriftCast">
+          <span class="num">04 / PRODUCT</span>
+          <h3>DriftCast</h3>
+          <p>A modular drift platform — one tube chassis, swappable drivelines and a quick-swap plastic skin — with a data-driven catalog.</p>
+          <span class="go">Explore DriftCast <svg width="16" height="11" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="rm live ticks" href="notebook/index.html" aria-label="Engineering Notebook">
+          <span class="num">05 / NOTEBOOK</span>
+          <h3>Engineering Notebook</h3>
+          <p>Deep, original technical write-ups — roll control, drift geometry, bypass tuning — with inline schematics.</p>
+          <span class="go">Read the notebook <svg width="16" height="11" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <span class="brand" style="font-size:16px">
+        <svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true">
+          <path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="word">STUDIO</span>
+      </span>
+      <p>Desert brutalism meets Japanese precision. Built like it's welded — precise, honest, made to last.</p>
+      <nav aria-label="Footer" style="margin-top:14px; display:flex; gap:14px; flex-wrap:wrap; font-family:var(--mono); font-size:12px">
+        <a href="trophy-truck.html" style="color:var(--mute)">Trophy Truck</a>
+        <a href="driftcast/index.html" style="color:var(--mute)">DriftCast</a>
+        <a href="notebook/index.html" style="color:var(--mute)">Notebook</a>
+        <a href="studio.html" style="color:var(--mute)">Studio</a>
+        <a href="contact.html" style="color:var(--mute)">Contact</a>
+      </nav>
+    </div>
+    <div class="meta">
+      <div class="tagline">Numbers as beauty.</div>
+      <div style="margin-top:8px">Unlisted · offline-first PWA</div>
+      <div style="margin-top:4px">© <span class="mono">2026</span> ⟨STUDIO⟩</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Vendored motion libs (UMD globals) + progressive orchestrator. Page works without these. -->
+<script src="assets/lib/three.r128.min.js"></script>
+<script src="assets/lib/gsap.min.js"></script>
+<script src="assets/lib/ScrollTrigger.min.js"></script>
+<script src="assets/lib/lenis.min.js"></script>
+<script type="module" src="assets/motion/studio.js"></script>
+<script type="module" src="assets/three/hero.js"></script>
+
+<!-- PWA: progressive enhancement only -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('service-worker.js').catch(function (e) {
+        console.warn('SW registration skipped:', e && e.message);
+      });
+    });
+  }
+</script>
+</body>
+</html>

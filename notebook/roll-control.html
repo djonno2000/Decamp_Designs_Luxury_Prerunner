@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>Holding roll without the waddle — Engineering Notebook | STUDIO</title>
+<meta name="description" content="Bypass-shock internals, cross-linked hydraulic roll control and the proven prior art — landing on the honest optimum for a long-travel desert truck: a steel bar plus exactly one blow-off shock.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Holding roll without the waddle">
+<meta property="og:description" content="The honest minimum hydraulic-assisted anti-roll system for a long-travel desert truck.">
+<meta property="og:image" content="../assets/icons/icon-512.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.json">
+<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<link href="../assets/css/studio.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="v-desert">
+<div class="progress-bar" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/></linearGradient></defs><path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a href="index.html">Notebook</a>
+      <a href="../trophy-truck.html">Trophy Truck</a>
+      <a href="../build-lab.html">Build Lab</a>
+      <a class="cta" href="../index.html">Hub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article class="wrap article">
+    <header class="article-head">
+      <a href="index.html" class="eyebrow" style="text-decoration:none">← Engineering Notebook</a>
+      <h1 data-split>Holding roll without the waddle</h1>
+      <p class="dek">A first-principles teardown of bypass-shock internals, cross-linked hydraulic roll control,
+        and the proven prior art — landing on the honest optimum for a long-travel desert truck: a bulletproof
+        steel bar plus exactly one self-contained blow-off shock, packaged the MCD/Kirby way over the diff.</p>
+      <div class="article-meta">
+        <span class="tag vert">trophy-truck</span>
+        <span class="tag">roll-control</span><span class="tag">bypass-shock</span><span class="tag">prior-art</span>
+        <span class="confidence">⚑ Concept under bench-test — not yet built</span>
+      </div>
+    </header>
+
+    <div class="prose">
+      <h2>The problem: why a trophy truck rolls, and why the cure has a catch</h2>
+      <p>Soft, long-travel springs are non-negotiable for jumps and rough terrain — but on a tall, heavy,
+        powerful chassis they give very little roll stiffness. The truck leans hard in corners, which tucks
+        tyres, slows transitions and eats the usable travel you fought for.</p>
+      <p>A sway bar adds roll stiffness without adding ride stiffness — exactly what you want. But it
+        <b>couples the wheels</b>: a single-wheel hit gets transmitted across the axle (the "waddle"), the
+        partner wheel is unloaded on impact, and the bar fights the dampers in cross-grain terrain. Desert
+        teams call them evil and run the smallest one they can get away with.</p>
+      <p>So the goal is precise: <b>hold roll</b> in corners (a sustained, low-rate, differential input) while
+        staying <b>compliant over sharp single-wheel hits</b> (a transient, high-rate input). Two physics facts
+        govern everything that follows: roll must be held by a <b>spring</b> (force that builds with
+        displacement), and impact compliance needs the device to <b>decouple on a transient spike</b>. The
+        discriminator between "roll" and "a hit" is <b>duration</b>, not which wheel moved.</p>
+
+      <h2>How a bypass shock actually works</h2>
+      <p>The toolbox first. A bypass shock is a damper with two tuning axes — velocity and position.</p>
+      <ul>
+        <li><b>Main piston</b> carries a shim stack (spring-steel discs over ports) plus a permanent bleed. It
+          shapes force-vs-velocity: light and bled at low shaft speed, then the shims "blow off" at high speed
+          so a sharp hit doesn't spike force to infinity. That's <b>velocity sensitivity</b>.</li>
+        <li><b>Bypass tubes</b> (two to six, split compression/rebound) route oil <em>around</em> the piston,
+          each with its own tunable poppet. Near ride height oil escapes through the open ports → <b>soft</b>;
+          past the port the bypass seals and oil is forced through the shim stack → <b>firm</b>. That's
+          <b>position sensitivity</b>.</li>
+      </ul>
+      <p>The load-bearing fact: flow through an orifice or poppet drops pressure roughly with <b>flow squared</b>.
+        Shaft velocity sets the flow, so damping is low at low velocity, high at high velocity, and essentially
+        <b>zero at zero velocity</b>. Hold that thought — it decides the whole argument.</p>
+
+      <h2>The cross-link concept: what's genuinely sound, and the fork</h2>
+      <p>Plumb the left and right shocks together so fluid only transfers on <b>differential</b> motion. In
+        heave (both wheels compress together) there's no net flow → the link is transparent and the ride stays
+        soft. In roll or articulation (one up, one down) fluid moves through the link → resistance. That
+        instinct is correct, and it's exactly what the frontier systems exploit.</p>
+      <p>But there are two forks. <b>Truth A:</b> damping resists <em>velocity</em>; only a spring resists
+        <em>displacement</em>. Sustained corner roll is slow shaft motion → low flow → low force. A pure
+        poppet/orifice cross-link gives weak resistance to slow roll and strong resistance to fast hits — the
+        exact inverse of the goal — and makes zero force at zero velocity, so it <b>cannot hold a roll
+        attitude</b>. <b>Truth B:</b> velocity can't tell a sharp turn-in from a sharp bump; both are fast
+        differential inputs. The real difference is duration (roll lasts hundreds of milliseconds to seconds,
+        a hit a few milliseconds), which calls for a frequency filter — a gas accumulator — not more poppets.</p>
+
+      <h2>The reframed cross-link that actually works</h2>
+      <p>Fix the concept by adding the two elements poppets can't replace:</p>
+      <ul>
+        <li><b>Through-rod (double-ended) shocks.</b> A single-rod shock displaces rod volume as it strokes,
+          unbalancing the link; a through-rod keeps displaced volume equal side-to-side so the link stays
+          honest. This alone is why real cross-linked systems use them.</li>
+        <li><b>A gas accumulator in the roll circuit = the roll spring.</b> Sustained differential displacement
+          compresses it, producing a restoring pressure that both resists and <em>holds</em> roll. Pre-charge
+          sets roll stiffness and can be shaped progressive.</li>
+        <li><b>A tunable relief/blow-off across the link = the impact filter.</b> A brief high-pressure spike
+          from a sharp single-wheel hit cracks the relief → the wheel moves free; sustained roll pressure stays
+          below it, carried by the accumulator. <em>This</em> is where bypass-poppet intuition belongs — as the
+          relief, not the roll-holder.</li>
+      </ul>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/roll-control-cross-link.svg" alt="Schematic of a cross-linked hydraulic roll-control circuit: left and right through-rod shocks plumbed together, a gas accumulator acting as the roll spring on the differential circuit, and a tunable blow-off relief valve as the impact filter.">
+        <figcaption>// Cross-linked circuit: through-rod shocks + accumulator (roll spring) + tunable relief (impact filter). Heave-transparent, roll-holding, hit-compliant.</figcaption>
+      </figure>
+      <p>Net behaviour: stiff to sustained roll (accumulator), compliant to sharp hits (relief), transparent to
+        heave (cross-link), tunable by pre-charge and relief rate. The honest costs: through-rod shocks are
+        mandatory, the small-master/big-slave plumbing is a packaging problem, hydraulic durability under
+        sustained desert hammering is real, and every extra circuit is another failure point mid-stage and
+        another thing to certify for road rego.</p>
+
+      <h2>Prior art: this is proven, from F1 to LandCruisers</h2>
+      <p>None of this is speculative — passive hydraulic interconnection has a long, successful lineage:</p>
+      <ul>
+        <li><b>Kolltek Cross Link (KCL)</b> — the closest buyable off-road product; a passive hydraulic
+          cross-link that replaces the sway bar, giving anti-roll, anti-dive and self-levelling by mechanical
+          logic, no electronics. Worth contacting before building.</li>
+        <li><b>Citroën Xantia Activa (1994)</b> — first production active cross-stabiliser; limited lean to
+          ~0.5° and held the moose-test record (85 km/h) for ~26 years. The honest lesson: the rest of the
+          chassis couldn't keep pace — balance the truck, don't out-develop it.</li>
+        <li><b>Toyota KDSS</b> — passive hydraulic interconnect (invented by Kinetic Pty Ltd, WA): rigid bars
+          on-road, decoupled off-road. The best "what does the hardware look like" reference.</li>
+        <li><b>F1 FRIC</b> (banned mid-2014) and <b>Multimatic DSSV / TrueActive</b> (which can delete sway
+          bars, and runs on the Silverado ZR2 at the Mint 400 and King of the Hammers) — proof that "no sway
+          bar via shock control" is both a performance-bannable advantage and desert-real.</li>
+      </ul>
+      <blockquote>Several patents describe the exact approach — left/right shocks with separate
+        compression/rebound valves, through-rod rods, a reservoir, running alongside a lighter sway bar:
+        "like two independent shocks and a disengaged sway bar." It's literally cross-linking bypass shocks.
+        For a one-off home build that's IP awareness, not a commercial blocker — but it exists.</blockquote>
+
+      <h2>The minimum system: steel bar + one blow-off shock</h2>
+      <p>Effectiveness and robustness sit at opposite ends. For a truck that must <em>finish</em>, keep a
+        bulletproof mechanical core and add the minimum hydraulic content to fix the bar's one real flaw.</p>
+      <p>Keep a steel anti-roll bar as the roll spring, and replace <b>one of its two drop links</b> with a
+        single self-contained blow-off (bypass/relief) shock. Through the cornering-load range that shock is
+        effectively rigid, so the bar works normally and holds roll. On a sharp single-wheel spike the relief
+        cracks, the link gives, and the bar momentarily decouples — no waddle, partner wheel not unloaded.</p>
+      <p>One link is enough because a torsion bar is a <b>single load path</b>: both drop links carry equal and
+        opposite force, so one blow-off link gates the whole bar — a hit from either wheel cracks it. The
+        minimum parts count: one bar, two arms, two bearing mounts, one solid chromoly link, one blow-off
+        shock. The only hydraulic part is a single self-contained shock — <b>no lines, no external accumulator,
+        no reservoir, nothing to plumb or bleed.</b> Two clean tuning knobs: blade angle (roll rate) and shock
+        relief (impact threshold).</p>
+
+      <h2>Architecture: the diff-mounted (MCD/Kirby) packaging</h2>
+      <p>Clamp the torsion section to the axle housing over the third member, in bearings so symmetric bump
+        doesn't twist it, with short stout links to chassis pickups and the bar arcing over the diff.</p>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/diff-mounted-swaybar.svg" alt="Architecture of a diff-housing-mounted rear anti-roll bar: torsion section clamped to the axle housing in bearings, short stout links running up to chassis pickups, the bar arcing over the differential.">
+        <figcaption>// Diff-mounted rear ARB — a self-contained axle module with a short, low-compliance roll path.</figcaption>
+      </figure>
+      <p>The real benefits, in honest order: (1) a <b>self-contained axle module</b> — the rear end builds,
+        sets up and unbolts as one assembly; (2) a <b>direct, low-compliance roll path</b> — short stout links
+        instead of long slender drop links that flex and add lash; (3) compact, low, central packaging.</p>
+      <blockquote>Walk-back worth stating: this is <em>not</em> for "geometry consistency." The bar reacts
+        axle-to-chassis roll either way, and that relative motion is frame-independent — an equivalent
+        chassis-mounted bar behaves identically. Worse, short links push motion-ratio variation up and raise
+        over-centre risk. The wins are practical and structural, not kinematic.</blockquote>
+      <p>The costs of diff-mounting: <b>unsprung mass</b> (so run the smallest bar that controls lean), a
+        hostile impact/debris/pinion-heat zone, and spool/third-member clearance (a spool housing is fatter
+        than an open diff — sort it early). The blow-off shock itself: compact and self-contained, effectively
+        rigid through full cornering load, with a tunable relief, a short stroke (~15–25 mm) and internal
+        end-stops as a mechanical backstop.</p>
+
+      <h2>Failure modes, tuning, and the staged build path</h2>
+      <p>It degrades gracefully. Relief clogs or fails closed → the bar is fully active, harsh but safe. Shock
+        loses oil → the rod is free over its short stroke then bottoms on its internal stops → the bar works
+        with slight lash, still drivable. The big win is that there are <b>no external lines, fittings,
+        accumulators or reservoirs to leak</b> — the single fact that beats every plumbed system for a truck
+        that has to finish.</p>
+      <p>Tune the two knobs on a timed loop: roll rate via the blade (start with the smallest rate that stops
+        lean and tyre-tuck, rear-biased to rotate); impact threshold via the relief (high enough that even a
+        hard turn-in stays below it, low enough that genuine single-wheel hits crack it). Too low feels vague
+        in corners; too high feels harsh and waddly.</p>
+
+      <div class="takeaways">
+        <h3>Key takeaways</h3>
+        <ul>
+          <li><b>Damping ≠ spring.</b> Only a spring (steel bar or gas accumulator) can hold a roll attitude; a poppet-only cross-link inverts the goal.</li>
+          <li><b>Duration, not which wheel,</b> separates roll from a hit — so an accumulator swallows transients and the poppet/relief is the impact filter, never the roll-holder.</li>
+          <li><b>No roll device removes steady-state load transfer</b> (that's set by CG height, track and lateral G). The prize is the transient/impact domain.</li>
+          <li><b>For a truck that must finish,</b> keep a bulletproof mechanical core and add the minimum hydraulic content — one self-contained blow-off shock, nothing to leak.</li>
+          <li><b>Build in order:</b> bar alone → add the blow-off link → (maybe) the full cross-link. The diff-mounted layout wins on module and packaging, not kinematics.</li>
+        </ul>
+      </div>
+
+      <div class="callout-box flag" style="margin-top:24px">
+        <p style="margin:0; font-size:14px; color:var(--ink-2)"><b style="color:var(--gold-straw)">Honesty notes.</b>
+          The diff-mounted clamp detail is read from video, not verified from stills. The full cross-link is
+          bench-test-pending, not built. The blow-off shock is rate/force-sensitive, not psychic — a very hard
+          berm can nibble it. This minimum system trades the theoretical maximum of roll-vs-compliance
+          separation for robustness, on purpose.</p>
+      </div>
+
+      <p style="margin-top:30px"><a class="btn" href="index.html">← All Notebook articles</a>
+        <a class="btn btn-ghost" href="../trophy-truck.html" style="margin-left:10px">The truck build →</a></p>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div><span class="brand" style="font-size:16px"><svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span></div>
+    <div class="meta"><div class="tagline">Numbers as beauty.</div></div>
+  </div>
+</footer>
+
+<script src="../assets/lib/gsap.min.js"></script>
+<script src="../assets/lib/ScrollTrigger.min.js"></script>
+<script src="../assets/lib/lenis.min.js"></script>
+<script type="module" src="../assets/motion/studio.js"></script>
+</body>
+</html>

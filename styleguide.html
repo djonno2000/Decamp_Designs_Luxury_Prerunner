@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>STUDIO — Styleguide</title>
+<meta name="description" content="The fab-shop luxury design system: tokens, type, and the component kit.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+<link href="assets/css/studio.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* styleguide-only scaffolding */
+  .sg-section{border-top:1px solid var(--line); padding:40px 0}
+  .sg-label{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--mute); margin:0 0 16px}
+  .swatches{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px}
+  .sw{border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden; background:var(--panel)}
+  .sw .chipcol{height:64px}
+  .sw .meta{padding:8px 10px; font-family:var(--mono); font-size:11px}
+  .sw .meta .nm{color:var(--bone)}
+  .sw .meta .hx{color:var(--mute)}
+  .type-row{display:flex; align-items:baseline; gap:16px; padding:8px 0; border-bottom:1px solid var(--line-soft); flex-wrap:wrap}
+  .type-row .tag{font-family:var(--mono); font-size:11px; color:var(--mute); width:120px; flex:0 0 auto}
+  .demo-grid{display:grid; gap:18px}
+  .swatches.cols, .demo-2{grid-template-columns:repeat(2,1fr)}
+  .demo-2{display:grid; gap:18px}
+  @media(max-width:880px){ .demo-2{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true">
+        <defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/>
+        </linearGradient></defs>
+        <path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="build-lab.html">Build Lab</a>
+      <a href="masterclass.html">Masterclass</a>
+      <a aria-current="page" href="styleguide.html">Styleguide</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow">Design system</span>
+    <h1 data-split>Fab-shop<br><span class="lit">luxury.</span></h1>
+    <p class="lead">Dark · metallic · precise. The tokens and component kit every page is built from.
+      Desert brutalism meets Japanese precision — numbers as beauty, every motion with mass.</p>
+  </section>
+
+  <!-- COLOUR -->
+  <section class="sg-section">
+    <p class="sg-label">01 — Colour tokens</p>
+    <div class="swatches">
+      <div class="sw"><div class="chipcol" style="background:var(--night)"></div><div class="meta"><div class="nm">night</div><div class="hx">#0f1012</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--panel)"></div><div class="meta"><div class="nm">panel</div><div class="hx">#17181c</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--steel-800)"></div><div class="meta"><div class="nm">steel-800</div><div class="hx">#1a212a</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--gold)"></div><div class="meta"><div class="nm">gold</div><div class="hx">#cda24e</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--gold-straw)"></div><div class="meta"><div class="nm">gold-straw</div><div class="hx">#dcc07e</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--gold-deep)"></div><div class="meta"><div class="nm">gold-deep</div><div class="hx">#8a6a2e</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--heat)"></div><div class="meta"><div class="nm">heat (grad)</div><div class="hx">straw→gold→deep</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--bone)"></div><div class="meta"><div class="nm">bone</div><div class="hx">#edece6</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--mute)"></div><div class="meta"><div class="nm">mute</div><div class="hx">#7b7d84</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--ok)"></div><div class="meta"><div class="nm">ok</div><div class="hx">#5f9e74</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--warn)"></div><div class="meta"><div class="nm">warn</div><div class="hx">#c8923a</div></div></div>
+      <div class="sw"><div class="chipcol" style="background:var(--danger)"></div><div class="meta"><div class="nm">danger</div><div class="hx">#d2503f</div></div></div>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section class="sg-section">
+    <p class="sg-label">02 — Typography</p>
+    <div class="type-row"><span class="tag">H1 · Condensed</span><p style="font-family:var(--head);text-transform:uppercase;font-weight:700;line-height:1.02;letter-spacing:.01em;margin:0;font-size:clamp(36px,6vw,64px)">Measure twice</p></div>
+    <div class="type-row"><span class="tag">H2 · Condensed</span><h2>Simulate before steel</h2></div>
+    <div class="type-row"><span class="tag">H3 · Condensed</span><h3>The frame keys off these numbers</h3></div>
+    <div class="type-row"><span class="tag">Lead · Barlow</span><p class="lead" style="margin:0">A trophy-truck and drift-platform workshop where the engineering is the design.</p></div>
+    <div class="type-row"><span class="tag">Body · Barlow</span><p style="margin:0; max-width:60ch">Body copy in Barlow. Honest, legible, weighted — readability never sacrificed for effect.</p></div>
+    <div class="type-row"><span class="tag">Mono · Plex Mono</span><p class="mono" style="margin:0">3,050 mm · 2,030 / 1,850 · 37" · 1234567890 — tabular numerals for specs &amp; CAD callouts</p></div>
+    <div class="type-row"><span class="tag">Eyebrow</span><span class="eyebrow">South Australia · Fabrication Studio</span></div>
+  </section>
+
+  <!-- MARKS & DETAILING -->
+  <section class="sg-section">
+    <p class="sg-label">03 — Fab-shop detailing</p>
+    <div class="demo-2">
+      <div class="card ticks">
+        <h3 style="margin-bottom:6px">Datum ticks</h3>
+        <div class="rule"></div>
+        <p class="dim" style="margin-top:14px">Registration / crop marks on the top-left &amp; bottom-right corners (<code class="mono">.ticks</code>).</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:6px">Machined rule</h3>
+        <div class="rule"></div>
+        <p class="dim" style="margin-top:14px">A short heat-tinted rule under headings (<code class="mono">.rule</code>). Full-width variant:</p>
+        <div class="rule full" style="margin-top:14px"></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:14px">CAD dimension callout</h3>
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:center">
+          <span class="callout"><span class="line"></span>3,050 mm</span>
+          <span class="callout"><span class="line"></span>2,030 mm</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:14px">Chevron logomark</h3>
+        <div style="display:flex; gap:20px; align-items:center">
+          <svg class="chev" width="48" height="48" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand"><svg class="chev" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIPS / BADGES / BUTTONS -->
+  <section class="sg-section">
+    <p class="sg-label">04 — Chips, badges, buttons</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px">
+      <span class="chip"><b>Finke</b><span class="u">Extreme 2WD</span></span>
+      <span class="chip mono"><b>37"</b><span class="u">Kenda M/T2</span></span>
+      <span class="chip"><b>King</b><span class="u">4.5 coilover</span></span>
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px">
+      <span class="badge live">Live</span>
+      <span class="badge">In development</span>
+      <span class="badge info">Under evaluation</span>
+    </div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+      <button class="btn btn-primary">Open the lab
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="btn">Default</button>
+      <button class="btn btn-ghost">Ghost</button>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="sg-section">
+    <p class="sg-label">05 — Surfaces</p>
+    <div class="demo-2">
+      <div class="card ticks">
+        <span class="eyebrow">Brushed card</span>
+        <h3 style="margin-top:10px">.card</h3>
+        <p class="dim" style="margin-top:10px">Brushed-metal surface — faint diagonal grain, top-lit edge, deep shadow.</p>
+      </div>
+      <aside class="titleblock ticks" aria-label="Example title block">
+        <div class="tbhead"><h3>MCD1 · Spaceframe</h3><span class="id">REV A · mm</span></div>
+        <div class="tbrows">
+          <div class="tbrow"><span class="k">Wheelbase</span><span class="v">3,050</span></div>
+          <div class="tbrow"><span class="k">Track — front</span><span class="v">2,030</span></div>
+          <div class="tbrow"><span class="k">Cage width</span><span class="v">1,765</span></div>
+        </div>
+        <p class="tbnote">// engineering title-block</p>
+      </aside>
+    </div>
+
+    <div class="doorways" style="margin-top:18px">
+      <a class="door live ticks" href="#0">
+        <span class="badge live">Live</span>
+        <span class="num">01 / TOOL</span>
+        <h3>Doorway card</h3>
+        <p>The large clickable doorway used on the hub and section landings.</p>
+        <span class="go">Open <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <article class="rm ticks">
+        <span class="num">02 / ROADMAP</span>
+        <h3>Roadmap card</h3>
+        <p>The dashed in-development doorway.</p>
+        <span class="tag">In development</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- VERTICAL THEMES -->
+  <section class="sg-section">
+    <p class="sg-label">06 — Two verticals, one system</p>
+    <div class="demo-2">
+      <div class="v-desert card ticks">
+        <span class="eyebrow">Trophy Truck</span>
+        <h3 style="margin-top:10px">Desert-brutalist</h3>
+        <div class="rule"></div>
+        <p class="dim" style="margin-top:14px">Rawer steel, dust, heat, weight. Warmer grain, heavier rule.</p>
+      </div>
+      <div class="v-tuner card ticks">
+        <span class="eyebrow">DriftCast</span>
+        <h3 style="margin-top:10px">Japanese-tuner precision</h3>
+        <div class="rule"></div>
+        <p class="dim" style="margin-top:14px">Tighter, cleaner, colder light, modular repetition.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTION -->
+  <section class="sg-section">
+    <p class="sg-label">07 — Motion (scroll to reveal · respects reduced-motion)</p>
+    <div class="roadmap" data-reveal-children>
+      <div class="card"><h3>Mass</h3><p class="dim" style="margin-top:8px">Expo-out entrances. No bounce.</p></div>
+      <div class="card"><h3>Stagger</h3><p class="dim" style="margin-top:8px">Children sequence in.</p></div>
+      <div class="card"><h3>Restraint</h3><p class="dim" style="margin-top:8px">Smooth is fast.</p></div>
+    </div>
+    <p class="dim mono" style="margin-top:18px; font-size:12px">// data-reveal / data-reveal-children — IntersectionObserver, GSAP+Lenis enhanced, reduced-motion safe</p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <span class="brand" style="font-size:16px"><svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span>
+      <p>Styleguide · the look is locked here.</p>
+    </div>
+    <div class="meta"><div class="tagline">Numbers as beauty.</div><div style="margin-top:8px">assets/css/studio.css</div></div>
+  </div>
+</footer>
+
+<script src="assets/lib/gsap.min.js"></script>
+<script src="assets/lib/ScrollTrigger.min.js"></script>
+<script src="assets/lib/lenis.min.js"></script>
+<script type="module" src="assets/motion/studio.js"></script>
+</body>
+</html>

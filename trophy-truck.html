@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>Trophy Truck — MCD1 · Finke build | STUDIO</title>
+<meta name="description" content="A bare ~$1,000 spaceframe to a road-registered, Finke-capable Extreme 2WD trophy truck — built from the real numbers. Supercharged LS, Ford 9, King shocks, 37-inch tyres.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trophy Truck — MCD1 · Finke build">
+<meta property="og:description" content="From a $1,000 spaceframe to a Finke finisher. Built from the numbers.">
+<meta property="og:image" content="assets/icons/icon-512.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="manifest" href="manifest.json">
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+<link href="assets/css/studio.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* trophy-truck page patterns */
+  .chapters{scroll-snap-type:y proximity}
+  .chapter{min-height:86vh; display:flex; align-items:center; padding:54px 0; scroll-snap-align:start;
+    border-top:1px solid var(--line-soft)}
+  .chapter:first-of-type{border-top:0}
+  .chapter .wrap{width:100%}
+  .ch-no{font-family:var(--mono); font-size:12px; letter-spacing:.2em; color:var(--gold); text-transform:uppercase}
+  .ch-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center; margin-top:18px}
+  .ch-grid.solo{grid-template-columns:1fr; max-width:760px}
+  .ch-grid h2{font-size:clamp(28px,5vw,46px); margin-top:6px}
+  .ch-grid p{color:var(--ink-2); margin-top:16px; max-width:54ch}
+  .ch-grid ul{margin:16px 0 0; padding-left:0; list-style:none}
+  .ch-grid li{position:relative; padding:7px 0 7px 22px; color:var(--ink-2); border-bottom:1px solid var(--line-soft)}
+  .ch-grid li::before{content:"//"; position:absolute; left:0; color:var(--gold); font-family:var(--mono); font-size:12px}
+  .ch-grid li b{color:var(--bone)}
+  .callouts{display:flex; flex-direction:column; gap:14px}
+  .cmp{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+  .cmp > div{padding:18px}
+  .cmp .col-a{border-right:1px solid var(--line)}
+  .cmp h4{font-size:16px; color:var(--bone); display:flex; justify-content:space-between; align-items:center; gap:8px}
+  .cmp .row{display:flex; justify-content:space-between; gap:10px; padding:7px 0; border-bottom:1px solid var(--line-soft); font-size:13px}
+  .cmp .row span:first-child{color:var(--mute); font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em}
+  .cmp .row span:last-child{color:var(--ink-2); text-align:right}
+  .timeline{margin-top:8px; border-left:2px solid var(--line)}
+  .tl{position:relative; padding:14px 0 14px 26px}
+  .tl::before{content:""; position:absolute; left:-7px; top:20px; width:12px; height:12px; border-radius:50%;
+    background:var(--panel); border:2px solid var(--gold)}
+  .tl .s{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold)}
+  .tl h4{font-size:17px; margin-top:4px}
+  .tl p{color:var(--mute); font-size:14px; margin-top:5px; max-width:60ch}
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px}
+  .shot{aspect-ratio:4/3; border:1px solid var(--line); border-radius:var(--r); display:flex; align-items:center;
+    justify-content:center; text-align:center; padding:14px;
+    background:repeating-linear-gradient(45deg,rgba(205,162,78,.04) 0 10px,transparent 10px 20px),linear-gradient(180deg,var(--panel),var(--panel-2));
+    color:var(--mute); font-family:var(--mono); font-size:11px; letter-spacing:.08em}
+  .specsheet{display:grid; grid-template-columns:repeat(2,1fr); gap:22px}
+  .ctaband{display:flex; flex-wrap:wrap; gap:14px; margin-top:24px}
+  @media(max-width:880px){
+    .ch-grid{grid-template-columns:1fr; gap:26px}
+    .cmp{grid-template-columns:1fr} .cmp .col-a{border-right:0; border-bottom:1px solid var(--line)}
+    .gallery{grid-template-columns:1fr 1fr} .specsheet{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body class="v-desert">
+<div class="progress-bar" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/></linearGradient></defs><path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a aria-current="page" href="trophy-truck.html">Trophy Truck</a>
+      <a href="build-lab.html">Build Lab</a>
+      <a href="notebook/index.html">Notebook</a>
+      <a class="cta" href="build-lab.html">Open the lab</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" data-ambience="dust">
+    <div class="wrap hero-grid">
+      <div data-reveal-children>
+        <span class="eyebrow">MCD1 · Extreme 2WD · Finke</span>
+        <h1 data-split>A thousand-dollar<br>frame, built to<br><span class="lit">finish.</span></h1>
+        <p class="lead">Take a bare ~$1,000 spaceframe and turn it into a road-registered, Finke-capable
+          desert truck — pointing every dollar at finishing, not at a dyno number. This is the build, told
+          from the real engineering.</p>
+        <div class="hero-meta">
+          <span class="chip"><b>Finke</b><span class="u">~446 km</span></span>
+          <span class="chip"><b>Extreme 2WD</b><span class="u">Motorsport AU</span></span>
+          <span class="chip mono"><b>500–600</b><span class="u">hp target</span></span>
+        </div>
+      </div>
+      <aside class="titleblock ticks" data-reveal style="--i:2" aria-label="MCD1 spec at a glance">
+        <div class="tbhead"><h3>MCD1 · Spaceframe</h3><span class="id">REV A · mm</span></div>
+        <div class="tbrows">
+          <div class="tbrow"><span class="k">Overall length</span><span class="v">4,900</span></div>
+          <div class="tbrow"><span class="k">Wheelbase</span><span class="v">3,050</span></div>
+          <div class="tbrow"><span class="k">Track — front</span><span class="v">2,030</span></div>
+          <div class="tbrow"><span class="k">Track — rear</span><span class="v">1,850</span></div>
+          <div class="tbrow"><span class="k">Cage width</span><span class="v">1,765</span></div>
+          <div class="tbrow"><span class="k">Tyre — nominal</span><span class="v">37 <small>in</small></span></div>
+        </div>
+        <p class="tbnote">// representative geometry — confirm in CAD</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 3D SPACEFRAME FLY-THROUGH — scroll to assemble the frame from its real coordinates.
+       Degrades to a static SVG engineering still on no-WebGL / low-tier / reduced-motion. -->
+  <section class="sf-section" data-hero data-chassis="truck"
+    aria-label="Spaceframe assembly — scroll to build the chassis from its real coordinates">
+    <div class="sf-stage" data-hero-stage>
+      <div class="sf-canvas" data-hero-canvas></div>
+      <div class="sf-fallback" data-hero-fallback hidden></div>
+      <div class="sf-overlay">
+        <div class="sf-eyebrow"><span class="eyebrow">The frame, drawn from its coordinates</span></div>
+        <div class="sf-callouts">
+          <span class="callout"><span class="line"></span>4,900 mm length</span>
+          <span class="callout"><span class="line"></span>3,050 mm wheelbase</span>
+          <span class="callout"><span class="line"></span>LS · Ford 9" · 37s seat in</span>
+        </div>
+        <div class="sf-hint">Scroll to assemble</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chapters">
+
+    <!-- 1 · THE GOAL -->
+    <section class="chapter">
+      <div class="wrap">
+        <span class="ch-no">Chapter 01 — The Goal</span>
+        <div class="ch-grid" data-reveal>
+          <div>
+            <h2>Finish when the expensive trucks don't</h2>
+            <p>The Finke Desert Race runs ~226 km each way down the Old Ghan road between Alice Springs and
+              Aputula — a prologue, then two days, same track reversed, cumulative time. First-time big-race
+              trucks finish at well under 5%; about half the field DNFs.</p>
+            <p>So the north star is simple and unfashionable: <b>finishing is the win.</b> Build for reliability,
+              safety and the driver — a dependable 500–600 hp that lasts, not a grenade 900 hp that strands you.</p>
+          </div>
+          <ul>
+            <li><b>Race</b> — Finke, King's Birthday long weekend (2026 = 50th running)</li>
+            <li><b>Class</b> — Extreme 2WD, rear-drive only, Motorsport Australia rules</li>
+            <li><b>Mandatory</b> — MA-spec cage, off-road licence, logbook, fire suit</li>
+            <li><b>Dual brief</b> — SA road-registered <em>and</em> Finke-capable (GVM ≤ 4,495 kg)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · THE FRAME -->
+    <section class="chapter">
+      <div class="wrap">
+        <span class="ch-no">Chapter 02 — The Frame</span>
+        <div class="ch-grid" data-reveal>
+          <div>
+            <h2>Everything keys off these numbers</h2>
+            <p>A low two-seater buggy spaceframe: wide side-by-side cockpit, raked screen, long nose and tail,
+              two 37" spares racked in the rear. The whole platform — fit checks, suspension, the 3D model —
+              is generated from these measured dimensions.</p>
+            <p class="mono dim" style="font-size:12px">Origin at the rear-axle centreline, on the ground.
+              Geometry is representative until a scan replaces it.</p>
+            <p style="margin-top:16px"><a class="btn btn-ghost" href="build-lab.html">Open it in the Build Lab
+              <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+          </div>
+          <div class="callouts">
+            <span class="callout"><span class="line"></span>4,900 mm overall length</span>
+            <span class="callout"><span class="line"></span>3,050 mm wheelbase</span>
+            <span class="callout"><span class="line"></span>2,030 mm front track</span>
+            <span class="callout"><span class="line"></span>1,850 mm rear track</span>
+            <span class="callout"><span class="line"></span>1,765 mm cage width</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · THE DRIVELINE -->
+    <section class="chapter">
+      <div class="wrap">
+        <span class="ch-no">Chapter 03 — The Driveline</span>
+        <div class="ch-grid" data-reveal>
+          <div>
+            <h2>Supercharged LS, into a Ford 9"</h2>
+            <p>A used iron 6.0L LS (LQ4/LQ9 dropout, ~$2.5–4.5k) built for reliability over peak power, feeding
+              a Ford 9" centre on a spool with 35-spline billet axles. Cheap, strong, field-serviceable.</p>
+            <p>The one live decision is the box. <b>TH400 vs ZF 8HP70</b> — under evaluation, gated on a mate's
+              standalone controller. The 8HP's software-controlled lockup is the prize: lock it on the street,
+              let it slip in the desert to soak driveline hits.</p>
+          </div>
+          <div class="cmp">
+            <div class="col-a">
+              <h4>TH400 <span class="badge live">proven</span></h4>
+              <div class="row"><span>Gears</span><span>3 · no OD / lockup</span></div>
+              <div class="row"><span>Weight</span><span>~61 kg</span></div>
+              <div class="row"><span>Strength</span><span>Bulletproof, simple</span></div>
+              <div class="row"><span>Desert</span><span>Field-fixable anywhere</span></div>
+              <div class="row"><span>Cost</span><span>~$6k rebuildable</span></div>
+            </div>
+            <div>
+              <h4>ZF 8HP70 <span class="badge info">eval</span></h4>
+              <div class="row"><span>Gears</span><span>8 · OD + lockup</span></div>
+              <div class="row"><span>Weight</span><span>~91 kg</span></div>
+              <div class="row"><span>Strength</span><span>Strong when controlled</span></div>
+              <div class="row"><span>Desert</span><span>Heat/electronics risk</span></div>
+              <div class="row"><span>Cost</span><span>~$2–3k + controller</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · SUSPENSION & ROLL CONTROL -->
+    <section class="chapter">
+      <div class="wrap">
+        <span class="ch-no">Chapter 04 — Suspension &amp; Roll Control</span>
+        <div class="ch-grid" data-reveal>
+          <div>
+            <h2>Geometry first, then the valving</h2>
+            <p>Independent SLA front, solid-axle 4-link rear, on King-style coilovers plus bypass shocks — four
+              of each, fully rebuildable. Tuned for +400 / −260 mm of front wheel travel. A well-tuned mid-tier
+              shock beats a badly-tuned expensive one; that's the cheap edge.</p>
+            <p>Holding roll without killing compliance is its own engineering problem — the answer here is a
+              steel bar plus exactly one blow-off shock, packaged over the diff.</p>
+            <p style="margin-top:16px"><a class="btn btn-ghost" href="notebook/roll-control.html">Read the roll-control deep-dive
+              <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+          </div>
+          <ul>
+            <li><b>Front</b> — independent SLA, +400 / −260 mm travel, −9.4° camber gain at full bump</li>
+            <li><b>Rear</b> — solid axle on a 4-link, 360 / 240 mm, 300 mm articulation</li>
+            <li><b>Shocks</b> — coilover + bypass ×4 each, rebuildable (King ref / Profender budget)</li>
+            <li><b>Roll</b> — minimum hydraulic content: steel bar + one blow-off link</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · WHEELS & STANCE -->
+    <section class="chapter">
+      <div class="wrap">
+        <span class="ch-no">Chapter 05 — Wheels &amp; Stance</span>
+        <div class="ch-grid" data-reveal>
+          <div>
+            <h2>37s on beadlocks — and a registered set</h2>
+            <p>37×12.50R17 Kenda Klever M/T2 (~$550 each, buy 5–6 with two spares racked low and rearward).
+              Nominal 37"; ~35.5–36" loaded. Beadlock race wheels for the desert, plus a separate road-legal
+              17" set, because beadlocks aren't road-legal in AU.</p>
+            <p class="mono dim" style="font-size:12px">// beadlock fix: steel thread inserts, 18–24 ft-lb max,
+              star pattern, blue Loctite, fresh bolts every trip</p>
+          </div>
+          <ul>
+            <li><b>Tyre</b> — 37×12.50R17 Kenda Klever M/T2</li>
+            <li><b>Wheels</b> — 17" beadlock race set + road-legal 17" set for rego</li>
+            <li><b>Spares</b> — two carried, mounted low + rearward for CG</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · BUILD LOG -->
+    <section class="chapter">
+      <div class="wrap">
+        <span class="ch-no">Chapter 06 — Build Log</span>
+        <div data-reveal>
+          <h2 style="font-size:clamp(28px,5vw,46px)">Rolling → Running → Road-legal</h2>
+          <div class="ch-grid" style="margin-top:22px; align-items:start">
+            <div class="timeline">
+              <div class="tl"><div class="s">Stage 0</div><h4>Legal &amp; safety foundation</h4><p>LVES frame classification (the SA rego trap) and the MA-spec cage — before any metal is cut.</p></div>
+              <div class="tl"><div class="s">Stage 1</div><h4>Drivetrain core</h4><p>Resolve TH400 vs 8HP with Decs, then LS + Ford 9" + cooling, built for reliability.</p></div>
+              <div class="tl"><div class="s">Stage 2</div><h4>Suspension geometry + tuning</h4><p>Geometry right first — motion ratio, travel, anti-squat — then valving and rebound.</p></div>
+              <div class="tl"><div class="s">Stage 3–5</div><h4>Wheels · systems · nav</h4><p>37s and the beadlock process, dust-proofing and redundancy, then a simple offline nav setup.</p></div>
+              <div class="tl"><div class="s">Stage 6–7</div><h4>Driver + shakedown</h4><p>Seat time throughout, then a shorter race before Finke — the cure for the &lt;5% first-timer finish rate.</p></div>
+            </div>
+            <div>
+              <div class="gallery">
+                <div class="shot">BUILD PHOTO<br>coming</div>
+                <div class="shot">BUILD PHOTO<br>coming</div>
+                <div class="shot">BUILD PHOTO<br>coming</div>
+                <div class="shot">BUILD PHOTO<br>coming</div>
+                <div class="shot">BUILD PHOTO<br>coming</div>
+                <div class="shot">BUILD PHOTO<br>coming</div>
+              </div>
+              <p class="mono dim" style="font-size:11px; margin-top:12px">// real build log + parallax gallery land with photos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SPEC SHEET -->
+  <section aria-labelledby="spec">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow">The numbers</span>
+        <h2 id="spec">Spec sheet</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="specsheet" data-reveal-children>
+        <aside class="titleblock ticks">
+          <div class="tbhead"><h3>Chassis &amp; stance</h3><span class="id">mm / in</span></div>
+          <div class="tbrows">
+            <div class="tbrow"><span class="k">Overall length</span><span class="v">4,900</span></div>
+            <div class="tbrow"><span class="k">Wheelbase</span><span class="v">3,050</span></div>
+            <div class="tbrow"><span class="k">Track F / R</span><span class="v">2,030 / 1,850</span></div>
+            <div class="tbrow"><span class="k">Cage height</span><span class="v">1,850</span></div>
+            <div class="tbrow"><span class="k">Tyre</span><span class="v">37×12.50R17</span></div>
+            <div class="tbrow"><span class="k">CG height (est)</span><span class="v">980</span></div>
+          </div>
+        </aside>
+        <aside class="titleblock ticks">
+          <div class="tbhead"><h3>Driveline &amp; suspension</h3><span class="id">spec</span></div>
+          <div class="tbrows">
+            <div class="tbrow"><span class="k">Engine</span><span class="v">Supercharged LS V8</span></div>
+            <div class="tbrow"><span class="k">Power target</span><span class="v">500–600 hp</span></div>
+            <div class="tbrow"><span class="k">Gearbox</span><span class="v">TH400 / 8HP <small>(eval)</small></span></div>
+            <div class="tbrow"><span class="k">Diff</span><span class="v">Ford 9" + spool</span></div>
+            <div class="tbrow"><span class="k">Front travel</span><span class="v">+400 / −260</span></div>
+            <div class="tbrow"><span class="k">Shocks</span><span class="v">Coilover + bypass ×4</span></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="ctaband" data-reveal>
+        <a class="btn btn-primary" href="build-lab.html">Run the numbers in the Build Lab
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn" href="notebook/index.html">Read the Engineering Notebook</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <span class="brand" style="font-size:16px"><svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span>
+      <p>Point every dollar at finishing. The truck is built from the numbers.</p>
+    </div>
+    <div class="meta"><div class="tagline">Numbers as beauty.</div><div style="margin-top:8px"><a href="index.html">← back to the hub</a></div></div>
+  </div>
+</footer>
+
+<script src="assets/lib/three.r128.min.js"></script>
+<script src="assets/lib/gsap.min.js"></script>
+<script src="assets/lib/ScrollTrigger.min.js"></script>
+<script src="assets/lib/lenis.min.js"></script>
+<script type="module" src="assets/motion/studio.js"></script>
+<script type="module" src="assets/three/hero.js"></script>
+</body>
+</html>

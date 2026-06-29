@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="STUDIO chevron mark">
+  <defs>
+    <linearGradient id="heat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dcc07e"/>
+      <stop offset=".5" stop-color="#cda24e"/>
+      <stop offset="1" stop-color="#8a6a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="#0f1012"/>
+  <path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#heat)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

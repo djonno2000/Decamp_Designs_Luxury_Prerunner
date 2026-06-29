@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>DriftCast Configurator | STUDIO</title>
+<meta name="description" content="Build a DriftCast live: pick engine, gearbox, diff, suspension, wheels and skin, watch the tube chassis update, see weight / balance / power-to-weight recompute, and share the build by URL.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/icons/icon-180.png">
+<link rel="manifest" href="../manifest.json">
+<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<link href="../assets/css/studio.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  .cfg{display:grid; grid-template-columns:1.35fr .9fr; gap:24px; align-items:start}
+  .cfg-viewport{position:relative; height:62vh; min-height:420px; border:1px solid var(--line); border-radius:var(--r);
+    overflow:hidden; background:radial-gradient(120% 100% at 50% 0,#16181d,#0c0d0f)}
+  .cfg-viewport canvas{display:block}
+  .cfg-svg{width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:10px}
+  .cfg-svg svg{width:100%; height:auto; max-height:100%}
+  .vp-hint{position:absolute; bottom:10px; left:12px; font-family:var(--mono); font-size:10.5px;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--mute); pointer-events:none}
+  .panel{display:flex; flex-direction:column; gap:18px}
+  .grp h3{font-size:13px; font-family:var(--head); text-transform:uppercase; letter-spacing:.1em; color:var(--mute); margin:0 0 9px}
+  .opts{display:flex; flex-wrap:wrap; gap:7px}
+  .opt{font-family:var(--body); font-size:13px; color:var(--bone); background:var(--panel); border:1px solid var(--line);
+    border-radius:999px; padding:7px 12px; cursor:pointer; transition:all var(--t-fast) var(--ease); display:inline-flex; align-items:center; gap:7px}
+  .opt:hover{border-color:rgba(205,162,78,.5)}
+  .opt[aria-pressed="true"]{color:var(--night); background:var(--heat); border-color:transparent; font-weight:600}
+  .opt .sw{width:12px; height:12px; border-radius:3px; border:1px solid rgba(255,255,255,.2)}
+  .opt .fl{font-family:var(--mono); font-size:9px; color:var(--gold-straw)}
+  .opt[aria-pressed="true"] .fl{color:var(--night)}
+  .readout{position:sticky; top:78px}
+  .metric{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:11px 0; border-bottom:1px solid var(--line-soft)}
+  .metric .k{font-family:var(--head); text-transform:uppercase; letter-spacing:.07em; font-size:12.5px; color:var(--mute)}
+  .metric .v{font-family:var(--mono); font-size:20px; color:var(--gold-straw); font-variant-numeric:tabular-nums}
+  .metric .v small{font-size:11px; color:var(--mute)}
+  .bias{height:8px; border-radius:5px; background:var(--steel-800); overflow:hidden; margin-top:4px; border:1px solid var(--line)}
+  .bias > i{display:block; height:100%; background:var(--heat)}
+  .warns{margin-top:14px; display:flex; flex-direction:column; gap:8px}
+  .warn-item{font-size:12.5px; color:var(--ink-2); padding:9px 11px; border:1px solid rgba(200,146,58,.35);
+    background:rgba(200,146,58,.07); border-radius:var(--r-sm); display:flex; gap:8px}
+  .warn-item::before{content:"⚑"; color:var(--warn)}
+  .ok-item{font-size:12.5px; color:var(--ok); padding:9px 11px; border:1px solid rgba(95,158,116,.35);
+    background:rgba(95,158,116,.07); border-radius:var(--r-sm)}
+  .cfg-actions{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
+  @media(max-width:980px){ .cfg{grid-template-columns:1fr} .readout{position:static} .cfg-viewport{height:48vh} }
+</style>
+</head>
+<body class="v-tuner">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/></linearGradient></defs><path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a href="index.html">DriftCast</a>
+      <a href="index.html#catalog">Catalog</a>
+      <a aria-current="page" href="configurator.html">Configurator</a>
+      <a class="cta" href="../notebook/index.html">Notebook</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <h1 class="visually-hidden">DriftCast build configurator</h1>
+  <section style="padding-top:34px">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow">Build your DriftCast</span>
+        <h2>The configurator</h2>
+        <div class="rule"></div>
+        <p>Pick the modules — the chassis, weight, balance and power-to-weight update live. Every build is a
+          shareable link. Estimates are transparent and clearly labelled, not gospel.</p>
+      </div>
+
+      <div class="cfg">
+        <div class="cfg-viewport">
+          <div id="vp" style="position:absolute; inset:0"></div>
+          <div class="vp-hint" id="vpHint">drag to orbit</div>
+        </div>
+
+        <div class="panel">
+          <div id="controls"></div>
+
+          <aside class="card readout" aria-label="Derived metrics" style="padding:20px">
+            <div class="metric"><span class="k">Est. weight</span><span class="v" id="mWeight">—</span></div>
+            <div class="metric" style="display:block">
+              <div style="display:flex; justify-content:space-between; align-items:baseline"><span class="k">Rear bias</span><span class="v" id="mBias">—</span></div>
+              <div class="bias"><i id="mBiasBar" style="width:54%"></i></div>
+            </div>
+            <div class="metric"><span class="k">Power-to-weight</span><span class="v" id="mP2W">—</span></div>
+            <div id="mWarns" class="warns"></div>
+            <div class="cfg-actions">
+              <button class="btn btn-primary" id="shareBtn">Copy share link
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M11 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button class="btn btn-ghost" id="resetBtn">Reset</button>
+            </div>
+            <p class="mono dim" style="font-size:10.5px; margin-top:12px">// weight/power are representative estimates — see assets/data/metrics.js</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div><span class="brand" style="font-size:16px"><svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span></div>
+    <div class="meta"><div class="tagline">Numbers as beauty.</div><div style="margin-top:8px"><a href="index.html">← DriftCast</a></div></div>
+  </div>
+</footer>
+
+<script src="../assets/lib/three.r128.min.js"></script>
+<script src="../assets/lib/OrbitControls.js"></script>
+<script type="module">
+  import { catalogs, computeMetrics, defaultConfig, encodeConfig, decodeConfig } from '../assets/data/metrics.js';
+  import { driftcastChassis } from '../assets/data/chassis.driftcast.js';
+  import { getDeviceTier } from '../assets/three/deviceTier.js';
+  import { configuratorSVG } from '../assets/three/configuratorSVG.js';
+  import { prefersReducedMotion } from '../assets/motion/reducedMotion.js';
+
+  let cfg = decodeConfig(location.search);
+  const FLAGS = ['VALUE-WEAPON','DRIFT-DEFAULT','AU-LOCAL','EXCELLENT','PREMIUM','TOP-TIER'];
+  const flagOf = (tags=[]) => tags.find((t) => FLAGS.includes(t));
+
+  const GROUPS = [
+    { key:'engineId', label:'Engine', items: catalogs.engines, idk:'id', name:(x)=>x.name },
+    { key:'gearboxId', label:'Gearbox', items: catalogs.gearboxes, idk:'id', name:(x)=>x.name },
+    { key:'diffId', label:'Diff centre', items: catalogs.diffs, idk:'id', name:(x)=>x.name },
+    { key:'lsd', label:'LSD lock', items: catalogs.lsdTypes, idk:'type', name:(x)=>x.type },
+    { key:'suspensionId', label:'Suspension', items: catalogs.suspension, idk:'id', name:(x)=>x.name },
+    { key:'wheelId', label:'Wheels', items: catalogs.wheels, idk:'id', name:(x)=>`${x.widthIn}" wide` },
+    { key:'skinId', label:'Skin', items: catalogs.skins, idk:'id', name:(x)=>x.name },
+  ];
+
+  const controlsEl = document.getElementById('controls');
+  function renderControls() {
+    controlsEl.innerHTML = GROUPS.map((g) => `
+      <div class="grp" style="margin-bottom:16px">
+        <h3>${g.label}</h3>
+        <div class="opts" data-key="${g.key}">
+          ${g.items.map((it) => {
+            const id = it[g.idk]; const sel = cfg[g.key] === id;
+            const fl = flagOf(it.tags); const sw = it.colorHex ? `<span class="sw" style="background:${it.colorHex}"></span>` : '';
+            return `<button class="opt" role="button" aria-pressed="${sel}" data-id="${id}">${sw}${g.name(it)}${fl ? `<span class="fl">${fl.replace(/-/g,' ')}</span>` : ''}</button>`;
+          }).join('')}
+        </div>
+      </div>`).join('');
+    controlsEl.querySelectorAll('.opts').forEach((row) => {
+      row.addEventListener('click', (e) => {
+        const btn = e.target.closest('.opt'); if (!btn) return;
+        cfg[row.dataset.key] = btn.dataset.id; update();
+      });
+    });
+  }
+
+  function renderMetrics() {
+    const m = computeMetrics(cfg);
+    document.getElementById('mWeight').innerHTML = `${m.estWeightKg} <small>kg</small>`;
+    document.getElementById('mBias').innerHTML = `${m.rearBiasPct}% <small>rear</small>`;
+    document.getElementById('mBiasBar').style.width = m.rearBiasPct + '%';
+    document.getElementById('mP2W').innerHTML = `${m.powerToWeight} <small>kW/t</small>`;
+    const wr = document.getElementById('mWarns');
+    wr.innerHTML = m.warnings.length
+      ? m.warnings.map((w) => `<div class="warn-item">${w}</div>`).join('')
+      : '<div class="ok-item">No packaging flags — clean build.</div>';
+  }
+
+  // selection state on buttons
+  function syncPressed() {
+    controlsEl.querySelectorAll('.opts').forEach((row) => {
+      const key = row.dataset.key;
+      row.querySelectorAll('.opt').forEach((b) => b.setAttribute('aria-pressed', String(cfg[key] === b.dataset.id)));
+    });
+  }
+
+  // 3D or SVG
+  let scene = null;
+  const vp = document.getElementById('vp');
+  function renderSVG() { vp.innerHTML = `<div class="cfg-svg">${configuratorSVG(driftcastChassis, cfg, catalogs)}</div>`; document.getElementById('vpHint').style.display = 'none'; }
+
+  function update() {
+    syncPressed();
+    renderMetrics();
+    if (scene) scene.applyConfig(cfg, catalogs); else renderSVG();
+    history.replaceState(null, '', location.pathname + '?' + encodeConfig(cfg));
+  }
+
+  async function boot() {
+    renderControls();
+    const tier = getDeviceTier();
+    const reduced = prefersReducedMotion();
+    const forceSVG = new URLSearchParams(location.search).has('nogl');
+    if (!forceSVG && window.THREE && tier !== 'none' && tier !== 'low') {
+      try {
+        const { ConfiguratorScene } = await import('../assets/three/configurator.js');
+        scene = new ConfiguratorScene(vp, driftcastChassis, { tier, reduced });
+      } catch (e) { console.warn('[configurator] WebGL failed, SVG fallback:', e && e.message); scene = null; }
+    }
+    if (!scene) renderSVG();
+    update();
+  }
+
+  document.getElementById('shareBtn').addEventListener('click', async (e) => {
+    const url = location.href;
+    try { await navigator.clipboard.writeText(url); e.currentTarget.firstChild.textContent = 'Copied! '; setTimeout(() => { e.currentTarget.firstChild.textContent = 'Copy share link '; }, 1600); }
+    catch { prompt('Copy this build link:', url); }
+  });
+  document.getElementById('resetBtn').addEventListener('click', () => { cfg = defaultConfig(); update(); });
+
+  boot();
+</script>
+<script type="module" src="../assets/motion/studio.js"></script>
+</body>
+</html>
