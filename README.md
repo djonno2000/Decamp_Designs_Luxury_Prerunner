@@ -21,8 +21,8 @@ build apps are **read-mostly** (only surgical edits).
 | `trophy-truck.html` | Flagship desert build — 3D spaceframe fly-through, scroll-snap chapters, spec sheet | **Live + 3D** |
 | `driftcast/index.html` | Modular drift platform — concept, data-driven catalog, partners, skin | **Live (flat)** |
 | `driftcast/configurator.html` | Live 3D build configurator — swap parts, live metrics, shareable URL | **Live + 3D** |
-| `notebook/index.html` | Engineering Notebook — filterable, 2 full articles + 7 stubs | **Live** |
-| `notebook/roll-control.html`, `notebook/drift-dynamics.html` | Seeded deep-dives w/ inline schematics | **Live** |
+| `notebook/index.html` | Engineering Notebook — filterable, 4 full articles + 6 stubs | **Live** |
+| `notebook/*.html` | Deep-dives: roll-control, drift-dynamics, **ls-exhaust**, **forced-induction-ls** (inline schematics) | **Live** |
 | `studio.html` / `contact.html` | Maker story + credited inspirations / get in touch | **Live** |
 | `styleguide.html` | The fab-shop design system — tokens, type, component kit, motion | **Live** |
 

@@ -19,6 +19,10 @@ deployable as-is; these are content/credentials only Daniel can provide.
       Design, Mason Motorsports, Danny Giannini** are credited by name with "link to confirm" — add
       the real URLs/handles (I didn't want to ship a guessed 404). Also confirm the **Shockworks**
       link on `driftcast/index.html`.
+- [ ] **Engine: NA vs supercharged LS — confirm.** Reframed to **naturally aspirated likely** per your
+      steer (hub chip, trophy-truck driveline/spec/meta). The two new Notebook articles cover both paths.
+      Say the word to lock it firmly NA (or blown) everywhere — incl. the `masterclass.html` air-filtration
+      note, which still references a supercharged LS (read-mostly research, left as-is for now).
 - [ ] **Cage-width discrepancy.** The brief / hero title-blocks show **1,765 mm cage width**, but
       `build-spec.json`'s internal `cage_half_width` is 545 (≈1,090 mm). Confirm which is canonical —
       it feeds `chassis.truck.js` and the Phase-4 3D.
@@ -30,11 +34,12 @@ deployable as-is; these are content/credentials only Daniel can provide.
       as spec.
 
 ## Notebook (content)
-- [x] ~~Pipeline + 2 seeded examples~~ — `notebook/` pipeline live; **roll-control** and
-      **drift-dynamics** fully written with inline schematics.
-- [ ] **Fill the 7 article stubs** in `assets/data/articles.js` (bypass-rebound-tuning,
-      diff-mounted-arb, forced-induction-ls, grip-and-drive, rear-hardpoints, rear-toe-catchability,
-      weight-balance-layout) — paste/finalise bodies; each becomes a page like the two seeded ones.
+- [x] ~~Pipeline + 2 seeded examples~~ — `notebook/` pipeline live. **4 articles published:**
+      roll-control, drift-dynamics, **ls-exhaust** ("The LS exhaust howl") and **forced-induction-ls**
+      ("NA vs blown LS") — all with inline schematics.
+- [ ] **Fill the 6 remaining stubs** in `assets/data/articles.js` (bypass-rebound-tuning,
+      diff-mounted-arb, grip-and-drive, rear-hardpoints, rear-toe-catchability, weight-balance-layout)
+      — paste/finalise bodies; each becomes a page like the published ones.
 
 ## Assets (Phase 2+)
 - [ ] **Real photos** (build log, parts, the truck) — placeholders only for now.

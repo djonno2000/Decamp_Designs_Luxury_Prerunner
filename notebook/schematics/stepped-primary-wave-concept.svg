@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="fwd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#edece6"/></marker>
+    <marker id="rev" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6cc08a"/></marker>
+    <marker id="ex" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a929b"/></marker>
+  </defs>
+  <rect width="1000" height="560" fill="#0f1012"/>
+  <text x="500" y="34" text-anchor="middle" font-size="18.5" font-weight="700" fill="#edece6">The stepped primary — velocity, a reflected scavenge wave, and anti-reversion</text>
+  <text x="500" y="55" text-anchor="middle" font-size="12" fill="#7b7d84">why a step beats just going bigger — FMU's "velocity step" idea (the right-angle shoulder does the work)</text>
+
+  <!-- port / head -->
+  <rect x="92" y="200" width="26" height="60" rx="3" fill="#cda24e" fill-opacity="0.35" stroke="#cda24e" stroke-width="1.6"/>
+  <text x="105" y="285" text-anchor="middle" font-size="9.5" fill="#cda24e" font-weight="700">PORT</text>
+
+  <!-- small primary -->
+  <rect x="118" y="214" width="252" height="32" fill="#1a212a" stroke="#cda24e" stroke-width="1.8"/>
+  <!-- large primary -->
+  <rect x="370" y="204" width="300" height="52" fill="#1a212a" stroke="#cda24e" stroke-width="1.8"/>
+  <!-- exit -->
+  <line x1="670" y1="230" x2="752" y2="230" stroke="#8a929b" stroke-width="7" stroke-linecap="round" marker-end="url(#ex)"/>
+  <text x="726" y="218" text-anchor="middle" font-size="9.5" fill="#8a929b">to collector →</text>
+
+  <!-- forward pulse arrow (inside pipe) -->
+  <line x1="140" y1="230" x2="648" y2="230" stroke="#edece6" stroke-width="2.6" marker-end="url(#fwd)"/>
+  <text x="250" y="207" font-size="10.5" fill="#edece6" font-weight="600">exhaust pulse out →</text>
+
+  <!-- reflected suction wave (arc back to cylinder) -->
+  <path d="M366,206 C 320,150 230,150 168,196" fill="none" stroke="#6cc08a" stroke-width="2.6" marker-end="url(#rev)"/>
+  <text x="250" y="150" text-anchor="middle" font-size="10.5" fill="#6cc08a" font-weight="700">← reflected suction wave (scavenges the cylinder)</text>
+
+  <!-- step callout -->
+  <line x1="366" y1="256" x2="430" y2="300" stroke="#cda24e" stroke-width="1"/>
+  <rect x="430" y="288" width="300" height="50" rx="8" fill="#17181c" stroke="#cda24e" stroke-width="1.1"/>
+  <text x="444" y="307" font-size="11" font-weight="700" fill="#cda24e">THE STEP (right-angle shoulder)</text>
+  <text x="444" y="323" font-size="10" fill="#cfcec8">reflects an early suction wave back + the shoulder</text>
+  <text x="444" y="335" font-size="10" fill="#cfcec8">blocks reversion (gas backing up into the small tube)</text>
+
+  <!-- small bore note -->
+  <text x="244" y="266" text-anchor="middle" font-size="9.5" fill="#7b7d84">small bore = high velocity</text>
+  <text x="244" y="278" text-anchor="middle" font-size="9.5" fill="#7b7d84">(low-rpm scavenge + response)</text>
+  <!-- large bore note -->
+  <text x="520" y="272" text-anchor="middle" font-size="9.5" fill="#7b7d84">steps up = volume for high rpm</text>
+
+  <!-- torque inset -->
+  <rect x="724" y="372" width="248" height="120" rx="8" fill="#141519" stroke="#3a3c40" stroke-width="1"/>
+  <text x="848" y="390" text-anchor="middle" font-size="10" fill="#a9b0b8" font-weight="700">torque vs rpm</text>
+  <line x1="748" y1="470" x2="956" y2="470" stroke="#5f6166" stroke-width="1"/>
+  <line x1="748" y1="400" x2="748" y2="470" stroke="#5f6166" stroke-width="1"/>
+  <text x="852" y="486" text-anchor="middle" font-size="8.5" fill="#7b7d84">rpm →</text>
+  <!-- single-bore: peaky dashed -->
+  <path d="M752,464 C 820,462 840,408 860,408 C 880,408 900,452 952,462" fill="none" stroke="#8a929b" stroke-width="2" stroke-dasharray="5 4"/>
+  <!-- stepped: broader solid gold -->
+  <path d="M752,452 C 800,448 820,422 860,420 C 905,418 925,440 952,448" fill="none" stroke="#cda24e" stroke-width="2.4"/>
+  <text x="848" y="410" text-anchor="middle" font-size="8" fill="#8a929b">single bore (peaky)</text>
+  <text x="850" y="436" text-anchor="middle" font-size="8.5" fill="#cda24e" font-weight="700">stepped (broader)</text>
+
+  <!-- takeaway -->
+  <rect x="40" y="372" width="664" height="120" rx="8" fill="#17181c" stroke="#cda24e" stroke-width="1.1"/>
+  <text x="56" y="396" font-size="12.5" font-weight="700" fill="#edece6">Stepped = velocity up + an early scavenging wave + anti-reversion.</text>
+  <text x="56" y="417" font-size="11.5" fill="#cfcec8">It <tspan font-weight="700">broadens the torque band</tspan> rather than raising the peak — exactly what a desert truck wants.</text>
+  <text x="56" y="436" font-size="11.5" fill="#cfcec8">Keep the bit off the head the smallest that doesn't choke the top end; one clean step up; tune lengths on a dyno.</text>
+  <text x="56" y="458" font-size="11.5" fill="#cfcec8">Runs <tspan font-weight="700">with</tspan> the megaphones: stepped primaries → X-pipe merge → one terminal megaphone + straight-through silencer.</text>
+  <text x="56" y="479" font-size="10.5" fill="#7b7d84" font-style="italic">Biggest power gains naturally aspirated (the prerunner); mostly sound + flow once it's blown.</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="15" markerHeight="15" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#cda24e"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6cc08a"/></marker>
+  </defs>
+  <rect width="1000" height="560" fill="#0f1012"/>
+  <text x="500" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#edece6">Exhaust routing — flat-belly spaceframe, steel cab (side view)</text>
+  <text x="500" y="50" text-anchor="middle" font-size="12" fill="#7b7d84">the rule: route OVER the frame rail, keep it above the skid plane, exit high · front of truck at left</text>
+
+  <!-- ground -->
+  <line x1="40" y1="476" x2="960" y2="476" stroke="#3a3c40" stroke-width="2"/>
+  <g stroke="#28323d" stroke-width="1"><line x1="60" y1="476" x2="48" y2="488"/><line x1="120" y1="476" x2="108" y2="488"/><line x1="180" y1="476" x2="168" y2="488"/><line x1="240" y1="476" x2="228" y2="488"/><line x1="300" y1="476" x2="288" y2="488"/><line x1="360" y1="476" x2="348" y2="488"/><line x1="420" y1="476" x2="408" y2="488"/><line x1="480" y1="476" x2="468" y2="488"/><line x1="540" y1="476" x2="528" y2="488"/><line x1="600" y1="476" x2="588" y2="488"/><line x1="660" y1="476" x2="648" y2="488"/><line x1="720" y1="476" x2="708" y2="488"/><line x1="780" y1="476" x2="768" y2="488"/><line x1="840" y1="476" x2="828" y2="488"/><line x1="900" y1="476" x2="888" y2="488"/></g>
+
+  <!-- wheels -->
+  <circle cx="215" cy="424" r="52" fill="#11161c" stroke="#4a5868" stroke-width="3"/><circle cx="215" cy="424" r="20" fill="none" stroke="#4a5868" stroke-width="2"/>
+  <circle cx="775" cy="424" r="52" fill="#11161c" stroke="#4a5868" stroke-width="3"/><circle cx="775" cy="424" r="20" fill="none" stroke="#4a5868" stroke-width="2"/>
+
+  <!-- frame rail band (skid plane = bottom) -->
+  <line x1="170" y1="388" x2="820" y2="388" stroke="#5f6166" stroke-width="2"/>
+  <line x1="170" y1="430" x2="820" y2="430" stroke="#cda24e" stroke-width="2.4"/>
+  <line x1="170" y1="388" x2="170" y2="430" stroke="#5f6166" stroke-width="2"/>
+  <line x1="820" y1="388" x2="820" y2="430" stroke="#5f6166" stroke-width="2"/>
+  <!-- spaceframe diagonals hint -->
+  <g stroke="#3a3c40" stroke-width="1.2"><line x1="170" y1="430" x2="250" y2="388"/><line x1="740" y1="430" x2="820" y2="388"/><line x1="250" y1="388" x2="330" y2="430"/></g>
+  <text x="495" y="446" text-anchor="middle" font-size="10.5" fill="#cda24e" font-weight="700">SKID PLANE — flat belly · NOTHING below this line</text>
+
+  <!-- steel cab -->
+  <path d="M335,388 L348,262 L470,250 L545,300 L545,388 Z" fill="#1a212a" stroke="#8a929b" stroke-width="2"/>
+  <path d="M360,300 L460,292 L505,316 L440,320 Z" fill="#11161c" stroke="#4a5868" stroke-width="1.2"/>
+  <line x1="470" y1="320" x2="470" y2="388" stroke="#4a5868" stroke-width="1.4"/>
+  <text x="405" y="356" text-anchor="middle" font-size="9.5" fill="#8a929b" font-weight="700">STEEL CAB</text>
+  <text x="505" y="376" text-anchor="middle" font-size="8" fill="#7b7d84">door</text>
+
+  <!-- engine + blower -->
+  <rect x="455" y="334" width="86" height="52" rx="3" fill="#28323d" stroke="#8a929b" stroke-width="1.6"/>
+  <rect x="472" y="312" width="50" height="24" rx="3" fill="#3a3c40" stroke="#cda24e" stroke-width="1.4"/>
+  <circle cx="479" cy="324" r="6" fill="none" stroke="#cda24e" stroke-width="1.2"/>
+  <text x="498" y="364" text-anchor="middle" font-size="8.5" fill="#cfcec8">LS + blower</text>
+
+  <!-- headers down to collector -->
+  <g stroke="#8a929b" stroke-width="3" fill="none"><path d="M458,378 C 445,395 438,405 432,414"/><path d="M468,382 C 458,398 450,408 440,416"/></g>
+  <circle cx="432" cy="418" r="7" fill="#475569" stroke="#cda24e" stroke-width="1.4"/>
+  <text x="395" y="420" text-anchor="end" font-size="9" fill="#7b7d84">collector (low,</text>
+  <text x="395" y="431" text-anchor="end" font-size="9" fill="#7b7d84">inside frame)</text>
+
+  <!-- pipe UP & OVER the rail, then rearward -->
+  <path d="M432,418 C 455,402 470,392 500,378 C 540,360 560,360 600,360" fill="none" stroke="#cda24e" stroke-width="6" stroke-linecap="round"/>
+  <!-- megaphone -->
+  <polygon points="600,352 650,346 650,374 600,368" fill="#cda24e" fill-opacity="0.18" stroke="#cda24e" stroke-width="1.8"/>
+  <!-- silencer -->
+  <rect x="650" y="345" width="86" height="30" rx="12" fill="#11161c" stroke="#cda24e" stroke-width="1.6"/>
+  <g fill="#5f6166"><circle cx="668" cy="360" r="1.4"/><circle cx="684" cy="354" r="1.4"/><circle cx="684" cy="366" r="1.4"/><circle cx="702" cy="360" r="1.4"/><circle cx="718" cy="354" r="1.4"/><circle cx="718" cy="366" r="1.4"/></g>
+  <!-- continue to rear, over the axle, exit -->
+  <path d="M736,360 C 760,358 775,356 800,352 L848,350" fill="none" stroke="#cda24e" stroke-width="6" stroke-linecap="round" marker-end="url(#ar)"/>
+  <text x="858" y="345" font-size="9" fill="#cda24e" font-weight="700">rear exit</text>
+  <text x="852" y="357" font-size="8" fill="#7b7d84">over the axle</text>
+
+  <!-- side-exit alternative (dashed) -->
+  <path d="M540,368 C 545,330 548,310 552,292" fill="none" stroke="#6cc08a" stroke-width="4" stroke-dasharray="7 5" stroke-linecap="round" marker-end="url(#ag)"/>
+  <text x="556" y="286" font-size="9" fill="#6cc08a" font-weight="700">OR side exit, high,</text>
+  <text x="560" y="297" font-size="9" fill="#6cc08a" font-weight="700">behind the cab</text>
+
+  <!-- callouts -->
+  <text x="250" y="120" font-size="11" font-weight="700" fill="#cda24e">1 · headers DOWN</text>
+  <text x="250" y="135" font-size="9.5" fill="#a9b0b8">(blower owns the top)</text>
+  <line x1="300" y1="128" x2="455" y2="370" stroke="#3a3c40" stroke-width="0.8"/>
+
+  <rect x="120" y="150" width="300" height="40" rx="7" fill="#17181c" stroke="#6cc08a" stroke-width="1.1"/>
+  <text x="134" y="167" font-size="10.5" font-weight="700" fill="#6cc08a">2 · up &amp; OVER the frame rail</text>
+  <text x="134" y="182" font-size="9.5" fill="#cfcec8">get it above the skid plane straight away</text>
+  <line x1="300" y1="190" x2="500" y2="378" stroke="#6cc08a" stroke-width="0.8"/>
+
+  <rect x="600" y="150" width="360" height="40" rx="7" fill="#17181c" stroke="#cda24e" stroke-width="1.1"/>
+  <text x="614" y="167" font-size="10.5" font-weight="700" fill="#cda24e">3 · merge + megaphone + silencer — over the frame</text>
+  <text x="614" y="182" font-size="9.5" fill="#cfcec8">mounted inside the envelope on iso hangers, never below the belly</text>
+  <line x1="700" y1="190" x2="690" y2="345" stroke="#cda24e" stroke-width="0.8"/>
+
+  <rect x="600" y="404" width="360" height="58" rx="7" fill="#17181c" stroke="#3a3c40" stroke-width="1.1"/>
+  <text x="614" y="423" font-size="10.5" font-weight="700" fill="#edece6">4 · exit HIGH, outside the steel cab</text>
+  <text x="614" y="439" font-size="9.5" fill="#cfcec8">rear over the axle, or side behind the door —</text>
+  <text x="614" y="453" font-size="9.5" fill="#cfcec8">above the rock line. Ceramic-coat + heat-shield past cab &amp; fuel.</text>
+
+  <text x="500" y="540" text-anchor="middle" font-size="11" fill="#7b7d84" font-style="italic">Everything inside the frame/body envelope, above the skid plane, outside the steel cab. The "over the frame, over the axle" tuck is the whole trick.</text>
+</svg>

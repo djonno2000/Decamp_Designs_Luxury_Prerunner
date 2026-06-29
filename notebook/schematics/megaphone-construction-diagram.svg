@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="d" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,5 L10,5 M3,2 L0,5 L3,8" stroke="#cda24e" stroke-width="1.4" fill="none"/></marker>
+    <marker id="d2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,5 L10,5 M7,2 L10,5 L7,8" stroke="#cda24e" stroke-width="1.4" fill="none"/></marker>
+    <marker id="gw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6cc08a"/></marker>
+  </defs>
+  <rect width="1000" height="620" fill="#0f1012"/>
+  <text x="500" y="32" text-anchor="middle" font-size="18.5" font-weight="700" fill="#edece6">Building a megaphone — cone geometry, the flat pattern, and the silenced reverse cone</text>
+  <text x="500" y="53" text-anchor="middle" font-size="12" fill="#7b7d84">gentle 6–8° cone · mouth area 1.5–2.5× the inlet · make the length adjustable to dyno-tune</text>
+
+  <!-- ===== cone profile (top-left) ===== -->
+  <text x="70" y="90" font-size="12" font-weight="700" fill="#cda24e">1 · THE CONE</text>
+  <polygon points="140,134 420,112 420,196 140,174" fill="#cda24e" fill-opacity="0.16" stroke="#cda24e" stroke-width="2"/>
+  <line x1="120" y1="154" x2="442" y2="154" stroke="#5f6166" stroke-width="1" stroke-dasharray="6 4"/>
+  <!-- D_in -->
+  <line x1="126" y1="134" x2="126" y2="174" stroke="#cda24e" stroke-width="1.2" marker-start="url(#d)" marker-end="url(#d2)"/>
+  <text x="104" y="158" font-size="10" fill="#cda24e">D_in</text>
+  <!-- D_mouth -->
+  <line x1="436" y1="112" x2="436" y2="196" stroke="#cda24e" stroke-width="1.2" marker-start="url(#d)" marker-end="url(#d2)"/>
+  <text x="448" y="156" font-size="10" fill="#cda24e">D_mouth</text>
+  <!-- L -->
+  <line x1="140" y1="214" x2="420" y2="214" stroke="#cda24e" stroke-width="1.2" marker-start="url(#d)" marker-end="url(#d2)"/>
+  <text x="280" y="228" text-anchor="middle" font-size="10" fill="#cda24e">L (length)</text>
+  <!-- angle -->
+  <path d="M196,131 A60,60 0 0,1 196,123" fill="none" stroke="#6cc08a" stroke-width="1.4"/>
+  <text x="206" y="120" font-size="9.5" fill="#6cc08a" font-weight="700">θ ≈ 6–8°</text>
+
+  <rect x="60" y="244" width="392" height="70" rx="8" fill="#17181c" stroke="#3a3c40" stroke-width="1"/>
+  <text x="74" y="265" font-size="10.5" fill="#cfcec8" font-weight="700">L = (D_mouth − D_in) ÷ (2 · tan(θ/2))</text>
+  <text x="74" y="283" font-size="10" fill="#a9b0b8">mouth area = 1.5–2.5 × inlet area  (1.5 = low-end, 2.5 = top-end)</text>
+  <text x="74" y="299" font-size="10" fill="#a9b0b8">gentler/longer = broad &amp; mild · steeper/shorter = peaky &amp; loud</text>
+
+  <!-- ===== flat pattern (top-right) ===== -->
+  <text x="540" y="90" font-size="12" font-weight="700" fill="#cda24e">2 · THE FLAT PATTERN (cut from sheet, then roll)</text>
+  <path d="M601,247 A176,176 0 0,1 705,351 L644,373 A110,110 0 0,0 579,308 Z" fill="#28323d" fill-opacity="0.5" stroke="#cda24e" stroke-width="1.8"/>
+  <!-- radial lines to apex (dashed) -->
+  <line x1="579" y1="308" x2="540" y2="410" stroke="#5f6166" stroke-width="0.8" stroke-dasharray="4 4"/>
+  <line x1="644" y1="373" x2="540" y2="410" stroke="#5f6166" stroke-width="0.8" stroke-dasharray="4 4"/>
+  <text x="556" y="300" font-size="9.5" fill="#cda24e" font-weight="700">a</text>
+  <text x="624" y="300" font-size="9.5" fill="#cda24e" font-weight="700">b</text>
+  <text x="566" y="360" font-size="9.5" fill="#6cc08a" font-weight="700">φ</text>
+
+  <rect x="724" y="240" width="248" height="120" rx="8" fill="#17181c" stroke="#3a3c40" stroke-width="1"/>
+  <text x="738" y="260" font-size="9.5" fill="#a9b0b8">r = radius (= D/2). slant of frustum:</text>
+  <text x="738" y="276" font-size="10" fill="#cfcec8" font-weight="700">s = √((r_mouth − r_in)² + L²)</text>
+  <text x="738" y="296" font-size="10" fill="#cfcec8" font-weight="700">a = r_in · s ÷ (r_mouth − r_in)</text>
+  <text x="738" y="312" font-size="10" fill="#cfcec8" font-weight="700">b = a + s</text>
+  <text x="738" y="328" font-size="10" fill="#cfcec8" font-weight="700">φ = 360 · (r_mouth − r_in) ÷ s</text>
+  <text x="738" y="348" font-size="9" fill="#7b7d84" font-style="italic">(or weld 4–11 stepped sections instead of rolling)</text>
+
+  <!-- ===== reverse cone + silencer (bottom) ===== -->
+  <text x="70" y="400" font-size="12" font-weight="700" fill="#cda24e">3 · TERMINAL REVERSE CONE + SILENCER  (your road / Finke piece)</text>
+  <!-- outer shell: small -> big -> small -->
+  <polygon points="150,470 330,432 560,462 560,498 330,528 150,490" fill="#cda24e" fill-opacity="0.12" stroke="#cda24e" stroke-width="2"/>
+  <!-- outlet pipe -->
+  <rect x="560" y="462" width="80" height="36" fill="#1a212a" stroke="#cda24e" stroke-width="1.6"/>
+  <!-- perforated core -->
+  <rect x="150" y="466" width="430" height="28" fill="#11161c" stroke="#8a929b" stroke-width="1.2"/>
+  <g fill="#5f6166"><circle cx="180" cy="480" r="1.5"/><circle cx="210" cy="473" r="1.5"/><circle cx="210" cy="487" r="1.5"/><circle cx="245" cy="480" r="1.5"/><circle cx="280" cy="473" r="1.5"/><circle cx="280" cy="487" r="1.5"/><circle cx="315" cy="480" r="1.5"/><circle cx="350" cy="473" r="1.5"/><circle cx="350" cy="487" r="1.5"/><circle cx="385" cy="480" r="1.5"/><circle cx="420" cy="473" r="1.5"/><circle cx="420" cy="487" r="1.5"/><circle cx="455" cy="480" r="1.5"/><circle cx="490" cy="473" r="1.5"/><circle cx="490" cy="487" r="1.5"/><circle cx="525" cy="480" r="1.5"/></g>
+  <!-- packing hatch (between core and shell, upper) -->
+  <g stroke="#4a5868" stroke-width="0.7" opacity="0.7">
+    <line x1="190" y1="462" x2="200" y2="452"/><line x1="220" y1="458" x2="232" y2="447"/><line x1="260" y1="452" x2="272" y2="442"/><line x1="300" y1="449" x2="312" y2="439"/><line x1="340" y1="448" x2="352" y2="439"/><line x1="380" y1="450" x2="392" y2="441"/><line x1="420" y1="452" x2="432" y2="444"/><line x1="470" y1="456" x2="482" y2="449"/><line x1="510" y1="460" x2="520" y2="454"/>
+  </g>
+
+  <!-- labels -->
+  <text x="240" y="420" text-anchor="middle" font-size="9.5" fill="#cda24e" font-weight="700">diverging (megaphone)</text>
+  <text x="455" y="420" text-anchor="middle" font-size="9.5" fill="#cda24e" font-weight="700">reverse cone (converging)</text>
+  <line x1="455" y1="424" x2="445" y2="448" stroke="#cda24e" stroke-width="0.8"/>
+  <path d="M520,512 C 470,520 430,520 392,512" fill="none" stroke="#6cc08a" stroke-width="2" marker-end="url(#gw)"/>
+  <text x="455" y="532" text-anchor="middle" font-size="9.5" fill="#6cc08a">← reflects a compression wave back (plugs at end of overlap)</text>
+  <text x="610" y="455" text-anchor="middle" font-size="9" fill="#edece6">outlet →</text>
+  <line x1="300" y1="494" x2="320" y2="556" stroke="#8a929b" stroke-width="0.8"/>
+
+  <!-- takeaway -->
+  <rect x="660" y="396" width="312" height="150" rx="8" fill="#17181c" stroke="#cda24e" stroke-width="1.1"/>
+  <text x="676" y="418" font-size="11" font-weight="700" fill="#edece6">Bare cone = peaky + loud + a low-rpm</text>
+  <text x="676" y="433" font-size="11" font-weight="700" fill="#edece6">flat spot ("megaphonitis").</text>
+  <text x="676" y="454" font-size="10.5" fill="#cfcec8">Add a perforated core + packing inside</text>
+  <text x="676" y="469" font-size="10.5" fill="#cfcec8">the reverse cone and you:</text>
+  <text x="676" y="488" font-size="10.5" fill="#6cc08a">• silence it for dB (road + Finke legal)</text>
+  <text x="676" y="505" font-size="10.5" fill="#6cc08a">• fill the low-end flat spot</text>
+  <text x="676" y="524" font-size="10.5" fill="#cfcec8">• keep the open character</text>
+  <text x="676" y="541" font-size="9" fill="#7b7d84" font-style="italic">304 stainless, ceramic-coated for the cab.</text>
+
+  <text x="500" y="588" text-anchor="middle" font-size="11.5" fill="#cfcec8">Per-bank cones feed the merge (no reverse cone there). The reverse-cone + silencer is the ONE terminal piece after the merge.</text>
+  <text x="500" y="606" text-anchor="middle" font-size="10.5" fill="#7b7d84" font-style="italic">On a blower it's mostly sound + dB; on the NA prerunner, dyno-trim the lengths for real torque-curve shaping.</text>
+</svg>

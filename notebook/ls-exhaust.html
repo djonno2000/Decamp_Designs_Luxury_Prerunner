@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1012">
+<title>The LS exhaust howl — Engineering Notebook | STUDIO</title>
+<meta name="description" content="Why a cross-plane LS burbles instead of screams, and how to build a stepped, megaphone-tuned, spaceframe-routed exhaust that broadens the torque curve a naturally aspirated desert truck actually races on.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The LS exhaust howl">
+<meta property="og:description" content="Firing order to reverse cone — the complete exhaust engineering for a naturally aspirated trophy-truck LS.">
+<meta property="og:image" content="../assets/icons/icon-512.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.json">
+<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<link href="../assets/css/studio.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="v-desert">
+<div class="progress-bar" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" aria-label="STUDIO home">
+      <svg class="chev" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="hc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcc07e"/><stop offset=".5" stop-color="#cda24e"/><stop offset="1" stop-color="#8a6a2e"/></linearGradient></defs><path d="M150 132 L342 256 L150 380" fill="none" stroke="url(#hc)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="word">STUDIO</span>
+    </a>
+    <nav class="site" aria-label="Primary">
+      <a href="index.html">Notebook</a>
+      <a href="../trophy-truck.html">Trophy Truck</a>
+      <a href="../build-lab.html">Build Lab</a>
+      <a class="cta" href="../index.html">Hub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article class="wrap article">
+    <header class="article-head">
+      <a href="index.html" class="eyebrow" style="text-decoration:none">← Engineering Notebook</a>
+      <h1 data-split>The LS exhaust howl</h1>
+      <p class="dek">Why a cross-plane LS <em>burbles</em> instead of screams, and how to build a stepped,
+        megaphone-tuned, spaceframe-routed exhaust that broadens the torque curve a naturally aspirated
+        desert truck actually races on — from firing order to reverse cone, with honest dyno-trim caveats
+        throughout.</p>
+      <div class="article-meta">
+        <span class="tag vert">trophy-truck</span>
+        <span class="tag">ls-v8</span><span class="tag">exhaust</span><span class="tag">megaphone</span><span class="tag">stepped-pipe</span><span class="tag">naturally-aspirated</span>
+        <span class="confidence">⚑ Sizing = dyno-trim starting points, not gospel</span>
+      </div>
+    </header>
+
+    <div class="prose">
+      <h2>1 · The firing order, and why it won't scream</h2>
+      <p>The LS firing order is <b>1-8-7-2-6-5-4-3</b> (the "4/7 swap" off the old small-block's
+        1-8-4-3-6-5-7-2). Bank 1 (left) is cylinders <b>1·3·5·7</b>; Bank 2 (right) is <b>2·4·6·8</b>. It's a
+        90° cross-plane crank, so the <em>whole engine</em> fires perfectly evenly — once every 90°. The
+        unevenness lives only <em>inside each bank</em>.</p>
+      <ul>
+        <li>Pull Bank 1 out alone and it fires at 0 / 180 / 450 / 630 → gaps of <b>180°, 270°, 180°, 90°</b>.</li>
+        <li>Bank 2 fires at 90 / 270 / 360 / 540 → gaps of <b>180°, 90°, 180°, 270°</b>.</li>
+        <li>That <b>90° back-to-back pair then a long wait</b> is the burble. A scream is <em>evenly-spaced</em> pulses; a burble is uneven ones.</li>
+        <li>So a normal 4-into-1-per-bank header on a cross-plane V8 <b>can never scream</b> — the collector is fed an uneven drumbeat.</li>
+        <li>A <b>flat-plane crank</b> (180° throws) makes each bank fire evenly at 180° — which is why Ferraris and race V8s scream on simple per-bank headers with no crossover.</li>
+      </ul>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/ls-firing-pulse-timing.svg" alt="Timing diagram of the LS firing order showing each bank's exhaust pulses at 0/180/450/630 and 90/270/360/540 degrees, with the uneven 180/270/180/90 gaps that produce the cross-plane burble.">
+        <figcaption>// Per-bank pulse timing: the uneven 180°/270°/180°/90° spacing is the burble. Geometry, not bad fabrication.</figcaption>
+      </figure>
+
+      <h2>2 · The bundle of snakes — and the honest fork</h2>
+      <p>To feed a collector an <em>even</em> pulse train on a cross-plane crank you have to <b>regroup cylinders
+        across both banks</b> — no single bank is even on its own. The only even groupings are
+        <b>Collector A = {1, 4, 6, 7}</b> (0/180/360/540) and <b>Collector B = {2, 3, 5, 8}</b> (90/270/450/630).
+        In Collector A, 1 and 7 live on the left while 4 and 6 live on the right — so the equal-length tubes
+        must cross the V. <em>That</em> cross-bank routing <b>is</b> the "bundle of snakes" — the geometric
+        price, not arbitrary ugliness.</p>
+      <blockquote>The brutal fork: <b>even pulses + zero crossover ⇒ flat-plane crank.</b> Cross-plane crank ⇒
+        <b>something must cross.</b> Everything else is choosing <em>what</em> crosses, and <em>where</em>.</blockquote>
+      <p>A different firing order won't save you (only flat-plane geometry makes a bank even), and a true
+        8-into-1 is even at 90° on either crank but merges both banks by definition — so it crosses too.</p>
+
+      <h2>3 · The smart-money answer (why the X-pipe wins)</h2>
+      <p>The sweet spot, and what to build first: a tidy <b>equal-length 4-into-1 per bank, routed down and
+        out, then one X-pipe</b> (or a single low merged collector) downstream. It's cleverer than it looks —
+        Bank 2's pulse train is just Bank 1's shifted 90°, so joining them downstream literally rejoins the two
+        halves of the even 90° whole-engine train. Call it 80% of the sound for 20% of the mess, and it keeps
+        the <b>midrange Finke actually lives in</b>.</p>
+      <ul>
+        <li><b>Keep primaries equal length</b> — that's what preserves the even firing to the collector; unequal lengths smear the timing and muddy everything.</li>
+        <li>For a <em>true</em> even scream, accept the trades: a <b>flat-plane crank</b> (clean 4-1 per side, no crossover — but $$$, a rebalance and real high-frequency buzz), or a CAD'd <b>equal-length 180° / 8-into-1 crossover routed low</b> through the chassis tunnel.</li>
+        <li><b>NA vs blown:</b> a turbo would kill the scream (it's a giant muffler that eats pulse energy); a blower keeps the exhaust open so the scream survives, but layers whine over the top.</li>
+      </ul>
+
+      <h2>4 · Stepped primaries — velocity, not back-pressure</h2>
+      <p>The Fluid MotorUnion playbook in one line: <b>don't chase back-pressure — keep gas velocity high while
+        minimising resistance.</b> That's why you step diameters instead of just going bigger. A stepped pipe
+        does three jobs at once:</p>
+      <ul>
+        <li><b>Velocity</b> — a small section off the head keeps speed up (keep the first ~15–20 cm the smallest ID that doesn't choke the top end).</li>
+        <li><b>Scavenge</b> — at each step the diameter increase reflects a <b>rarefaction (suction) wave</b> back toward the cylinder to help draw it out during overlap.</li>
+        <li><b>Anti-reversion</b> — the step <b>shoulder</b> resists reversion. The "right-angle" step is legit; the shoulder is doing the work.</li>
+      </ul>
+      <p>Two knobs, kept separate: <b>how abrupt</b> (a sharp square step = one strong, narrow-band pulse + strongest
+        anti-reversion; a gradual taper = weaker but broader) and <b>where it sits</b> (closer to the valve = wave
+        back sooner = higher rpm; farther out = lower rpm). FMU netted a real <b>~32 wheel-hp</b> on a C6
+        Corvette with stepped sections, placed megaphones and a rethought crossover; a third-gen Camaro LS3 swap
+        went 392 whp on long-tubes to a velocity-stepped rebuild (narrowing to 2.75" where velocity demanded,
+        back to 3" where volume mattered, plus a merge X and megaphone sections).</p>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/stepped-primary-wave-concept.svg" alt="Diagram of a stepped exhaust primary showing the suction (rarefaction) wave reflected back at the diameter step and the anti-reversion shoulder.">
+        <figcaption>// The step reflects a suction wave back to scavenge, and its shoulder blocks reversion. Stepping broadens the curve — it doesn't lift the peak.</figcaption>
+      </figure>
+      <p>Stepped <b>broadens</b> the curve rather than raising the peak — "robbing rpm you don't use to feed rpm
+        you do." On a big-displacement, high-rpm engine (an LS qualifies) that pays, and for a desert truck a
+        broader band is a feature, not a bug. The magnitude is modest and the step must be precisely sized and
+        located — a bolt-on anti-reversion collar can do nothing or even hurt. Get a starting point from Burns
+        Stainless specs, then dyno-develop rpm-by-rpm.</p>
+
+      <h2>5 · What a megaphone actually does (and doesn't)</h2>
+      <p>A megaphone is a <b>diverging cone</b>: a pressure pulse hitting the expansion reflects back as a
+        suction wave; timed into overlap it helps scavenge for a power bump in a <em>specific</em> rpm band. It
+        also smooths the pressure waveform (softer edges, less thud) and gives the open, building race-howl.</p>
+      <ul>
+        <li>What it is: <b>sound character + a band-specific scavenge tune.</b> What it isn't: a fix for the
+          cross-plane uneven <em>timing</em> — that's set by firing order. The <b>merges do the evening; the
+          megaphone shapes how it sounds.</b></li>
+        <li>A <b>reverse-cone megaphone</b> reflects a <em>compression</em> wave instead — it "plugs" the cylinder
+          at the end of overlap (broadens the band) and tames the open blare; often the smarter terminal piece
+          for a road-registered truck.</li>
+        <li><b>Don't stack three hard tuned stages</b> — two bank megaphones plus a final megaphone is three
+          reflection sources that fight and smear. Make the bank collectors the one tuned stage; let the final
+          element be a gentle expansion + silencer.</li>
+        <li><b>NA vs blown:</b> on a blower this is ~90% sound and flow (the blower forces filling); on the NA
+          prerunner the megaphone is worth dyno-developing for real torque-curve shaping.</li>
+      </ul>
+
+      <h2>6 · The three numbers that define a megaphone</h2>
+      <ul>
+        <li><b>Cone angle (included):</b> the experimentally-derived "most efficient" figure is <b>~7–8°</b> — the
+          default. Gentler/longer = milder wave over a broader band; steeper/shorter = stronger but peakier and
+          louder. A desert truck wanting fat, wide torque stays <b>gentle (~6–8°)</b>; a short steep cone is a
+          top-end peak-chaser and the source of <b>"megaphonitis"</b> (a low-rpm flat spot).</li>
+        <li><b>Area ratio (mouth ÷ inlet):</b> for a 4-stroke the mouth is <b>1.5× to 2.5×</b> the inlet area
+          (<em>not</em> the ~6× of a two-stroke). 1.5× biases low-end, 2.5× biases top-end.</li>
+        <li><b>Length:</b> <code>L = (D_mouth − D_inlet) ÷ (2 × tan(½ angle))</code>. Separately, the
+          <em>effective/tuned</em> length (valve to the cone's reflection point) sets <em>which rpm</em> the
+          returned suction wave helps — longer = lower rpm. Build it <b>slip-fit adjustable</b> to move on the dyno.</li>
+      </ul>
+      <p><b>Worked example</b> for a 2.75" collector outlet (area ≈ 5.9 in²): at 2× area → mouth ≈ <b>3.9"</b>,
+        about <b>8" long at 8°</b> (≈ 11" at 6°); at 1.5× area → mouth ≈ 3.4", a shorter cone with more low-end
+        bias. So a per-bank megaphone in the order of <b>2.75" in → ~3.4–3.9" mouth → ~8–11" long at 6–8°</b> —
+        starting points to dyno-trim, not gospel.</p>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/megaphone-construction-diagram.svg" alt="Construction diagram of a megaphone cone frustum unrolled to an annular sector, showing inner radius, outer radius and sector angle, plus the length formula.">
+        <figcaption>// A cone frustum unrolls to an annular sector — develop the flat pattern, roll, weld. The formula gives the length from inlet, mouth and angle.</figcaption>
+      </figure>
+
+      <h2>7 · The terminal reverse cone, and getting legal</h2>
+      <p>In this layout the per-bank cones feed the merge, and the <b>reverse cone lives at the terminal, after
+        the merge.</b> It tapers back down to a smaller outlet, reflects a compression wave, and tames the blare.</p>
+      <ul>
+        <li><b>Pure tuned version:</b> nothing inside — peaky and loud.</li>
+        <li><b>Street/desert version (what you want):</b> a <b>perforated core + packing</b> (mineral/stainless
+          wool) inside the reverse-cone can. It silences for dB <em>and</em> cures megaphonitis (fills the
+          low-rpm flat spot). One terminal element that keeps the character, passes tech, and survives the drive.</li>
+        <li><b>dB limits are real</b> — Finke and SA road rego both have noise limits; a bare open megaphone will
+          almost certainly fail and be brutal on a long drive. Plan a straight-through perforated silencer
+          (~3–3½" core) from the start. (Allen Motorsports' quiet F100 ran 180° headers + <em>multiple</em>
+          mufflers + copper coat — the quiet path is mufflers, not an open pipe.)</li>
+      </ul>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/ls-exhaust-stage-map.svg" alt="Stage map of the LS exhaust from primaries through the bank megaphone, the merge, to the final straight-through silencer, with ballpark pipe sizes.">
+        <figcaption>// The full stage map: ~1⅞" equal-length primaries → gentle 5–8° bank megaphone → 3–3½" merge → straight-through silencer.</figcaption>
+      </figure>
+      <p><b>Building the cone:</b> best is to develop the flat pattern (a frustum unrolls to an annular sector),
+        cut from sheet, roll, tack, check round, weld and grind; the budget way is to slit a straight tube and
+        hammer-form it in a vice (face the seam down so it disappears inside); or weld up 4–11 equal-length
+        sections each one tube-size larger for a faceted "megaphone." Material: <b>304 stainless</b> for desert
+        duty, ceramic-coated or wrapped to keep heat out of the cab.</p>
+
+      <h2>8 · Routing it through a steel-cab spaceframe</h2>
+      <p>The constraints write the route. The <b>flat belly is the skid plane</b> — anything below the frame line
+        drags, so under-floor routing is out — and a steel cab means the pipe goes <em>around</em> the cab, not
+        through it. So: keep it inside the frame/body envelope, above the skid plane, and exit high.</p>
+      <ul>
+        <li><b>The desert rule: route OVER the frame rail, exit high.</b> Up and over the top of the rail so it
+          sits above the skid plane, tucked inside the body, then back and over the rear axle if going rearward.
+          Never under.</li>
+        <li><b>Engine → exit:</b> headers drop off the heads, collectors low but inside the frame → immediately
+          turn up and over the rail (this buys the ground clearance) → run rearward inside the bodyside, above
+          the rail → mount merge + megaphone + silencer inside the envelope (the silencer can is the bulkiest
+          bit — never let it hang below the rail) → exit high, side behind the cab or rear over the axle.</li>
+        <li><b>Respect the door opening</b> — keep the pipe below the door line (through the rocker/sill) or behind
+          the door, never across the opening. The frame-depth channel between cabin floor and belly skid is fair
+          game (skid below, floor above).</li>
+        <li><b>Heat + protection:</b> ceramic- or copper-coat the headers and pipe (standard TT practice), heat
+          shield anywhere it passes the cab, fuel cell, lines or harness, and <b>mount on iso/spring hangers</b>
+          — a spaceframe flexes, so let the system float or it cracks pipes and cans. Slip-fit the megaphone so
+          you can dyno-trim it.</li>
+      </ul>
+      <figure>
+        <img loading="lazy" decoding="async" src="schematics/exhaust-routing-diagram.svg" alt="Routing diagram showing the exhaust running over the frame rail, above the skid plane, inside the body, and exiting high behind the cab on a steel-cab spaceframe truck.">
+        <figcaption>// Over the frame rail, above the skid plane, inside the body, exit high. The trophy-truck archetype: side exit behind the door.</figcaption>
+      </figure>
+
+      <div class="takeaways">
+        <h3>Key takeaways</h3>
+        <ul>
+          <li><b>On a cross-plane LS, something must cross the V to scream</b> — the bundle of snakes is geometry. The 80/20 answer is equal-length 4-1 per bank + one downstream X-pipe.</li>
+          <li><b>Chase velocity, not back-pressure.</b> Stepped primaries broaden the torque curve and fight reversion — exactly what a desert truck wants. FMU got a real ~32 whp doing it.</li>
+          <li><b>A megaphone is sound + a band-specific scavenge tune</b> — the merges even the pulses, the cone shapes the note. Default ~7° cones, mouth 1.5–2× inlet area, made adjustable.</li>
+          <li><b>One terminal reverse-cone with a perforated/packed core</b> does triple duty: dB compliance, cures megaphonitis, keeps the character. Don't stack three tuned stages.</li>
+          <li><b>NA is where the engineering pays.</b> Stepped + X + megaphone is real power on the NA prerunner; on a blown engine it's ~90% sound. Route everything over the frame, above the skid, exit high.</li>
+        </ul>
+      </div>
+
+      <div class="callout-box flag" style="margin-top:24px">
+        <p style="margin:0; font-size:14px; color:var(--ink-2)"><b style="color:var(--gold-straw)">Honesty notes.</b>
+          Every megaphone number is a dyno-trim starting point, not gospel — megaphones are genuinely hard to
+          nail, so the serious crowd builds several lengths and dynos them (make yours slip-fit). Stepped gains
+          are modest and location-sensitive. Best-sounding ≠ best-driving: chasing perfectly even pulses can
+          trade away the fat midrange the truck races on. And the whole wave-tuning argument shrinks to "sound +
+          flow" if the engine ends up blown — see the companion piece below.</p>
+      </div>
+
+      <p style="margin-top:30px"><a class="btn" href="index.html">← All Notebook articles</a>
+        <a class="btn btn-ghost" href="forced-induction-ls.html" style="margin-left:10px">NA vs blown LS →</a></p>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div><span class="brand" style="font-size:16px"><svg class="chev" width="22" height="22" viewBox="0 0 512 512" aria-hidden="true"><path d="M150 132 L342 256 L150 380" fill="none" stroke="#cda24e" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="word">STUDIO</span></span></div>
+    <div class="meta"><div class="tagline">Numbers as beauty.</div></div>
+  </div>
+</footer>
+
+<script src="../assets/lib/gsap.min.js"></script>
+<script src="../assets/lib/ScrollTrigger.min.js"></script>
+<script src="../assets/lib/lenis.min.js"></script>
+<script type="module" src="../assets/motion/studio.js"></script>
+</body>
+</html>
