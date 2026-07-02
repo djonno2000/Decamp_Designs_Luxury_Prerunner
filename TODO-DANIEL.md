@@ -4,9 +4,10 @@ Stubs and placeholders the build is scaffolded around. None of these block shipp
 deployable as-is; these are content/credentials only Daniel can provide.
 
 ## Brand / identity
-- [ ] **Studio name + final logo.** The site uses `STUDIO` / `⟨STUDIO⟩` as a swappable placeholder
-      wordmark and a generated gold-chevron mark (`favicon.svg`, `assets/icons/*`). Drop in the real
-      name + logo and regenerate icons. *(DriftCast name is final.)*
+- [x] ~~Studio name~~ — now **Decamp Designs** (from the repo name) across the whole site, manifest and
+      titles. The wordmark shows in neon-glow condensed caps beside the gold chevron.
+- [ ] **Final logo.** Still the *generated* gold-chevron mark (`favicon.svg`, `assets/icons/*`). If you
+      have a real Decamp Designs logo, drop it in and regenerate the icons. *(DriftCast name is final.)*
 - [x] ~~Vendored mono font~~ — **IBM Plex Mono** (400/500/600) vendored in Phase 2; `--mono` token
       now leads with it. Numbers/specs/CAD callouts render in it site-wide.
 

@@ -1,7 +1,7 @@
 {
-  "name": "STUDIO — Trophy Truck & DriftCast",
-  "short_name": "STUDIO",
-  "description": "Built from the numbers. Trophy-truck build tools, the MCD Masterclass, and the DriftCast modular drift platform.",
+  "name": "Decamp Designs — Luxury Prerunner & DriftCast",
+  "short_name": "Decamp",
+  "description": "Decamp Designs — built from the numbers. Luxury prerunner & trophy-truck build tools, the MCD Masterclass, and the DriftCast modular drift platform.",
   "id": "./",
   "start_url": "./index.html",
   "scope": "./",

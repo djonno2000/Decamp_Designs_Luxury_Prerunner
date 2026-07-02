@@ -1,12 +1,18 @@
 # STATUS — where we're leaving off
 
-_Last updated: 2026-06-29._
+_Last updated: 2026-07-02._
 
 ## TL;DR
-The full ⟨STUDIO⟩ web platform is **built (master-brief Phases 1–7), committed to git, and runnable
-locally.** It is **not yet pushed/deployed** — that's the next action and only you can do it (your
-GitHub/Netlify account). This session also **integrated the new LS-exhaust material** and reframed the
-truck's engine toward **naturally aspirated LS** (your call that NA is the likely direction).
+The full **Decamp Designs** web platform is **built (master-brief Phases 1–7) and PUSHED to GitHub**
+(`github.com/djonno2000/Decamp_Designs_Luxury_Prerunner`, branch `main`). The site was **rebranded
+from the `STUDIO` placeholder to Decamp Designs** and the look evolved to a **warm, LED-lit,
+polished-concrete luxury-garage** aesthetic (hanging ferns, neon-glow wordmark, warm light pools).
+The Build Lab was refreshed to the latest r4 (measured frame record, 760 mm fuel cell, 6L80E, 4L80E
+table), and the LS-exhaust material was integrated as two Notebook articles with the engine reframed
+**naturally-aspirated-likely**.
+
+**Only remaining deploy step:** enable **GitHub Pages** on the repo (Settings → Pages → Deploy from a
+branch → `main` / root). After that, every future change is a one-line `git push`.
 
 ## What's built (quick map)
 - **Site:** `index.html` (hub + 3D spaceframe hero), `trophy-truck.html`, `driftcast/` (platform +

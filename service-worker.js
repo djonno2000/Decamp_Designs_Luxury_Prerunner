@@ -6,7 +6,7 @@
  *     site (incl. hashed font woff2 subsets) is available offline after the first online visit.
  * Bump CACHE_VERSION whenever shell files change to force a clean update.
  */
-const CACHE_VERSION = 'studio-v8-2026-07-02';
+const CACHE_VERSION = 'studio-v9-2026-07-02';
 const CACHE = CACHE_VERSION;
 
 // Atomic: install fails (and old SW stays) if any of these can't be fetched.
@@ -83,6 +83,7 @@ const EXTENDED = [
   './assets/three/hero.js',
   './assets/three/configurator.js',
   './assets/three/configuratorSVG.js',
+  './assets/img/fern.svg',
   './assets/icons/icon-180.png',
 ];
 

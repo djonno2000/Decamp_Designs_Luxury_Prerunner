@@ -2,6 +2,28 @@
 
 Non-obvious choices, with the reasoning. Newest first.
 
+## Rebrand + "luxury garage" atmosphere (2026-07-02)
+
+- **Studio name resolved to "Decamp Designs"** (inferred from the pushed repo name
+  `Decamp_Designs_Luxury_Prerunner`). Swapped the `STUDIO` placeholder everywhere via the site
+  pages + manifest + titles; the `.brand` wordmark is `text-transform:uppercase`, so "Decamp Designs"
+  renders in condensed caps. The read-mostly apps (`build-lab`/`masterclass`) were untouched — their
+  "FLARE STUDIO" section names are unrelated.
+- **Design evolved toward a warm, LED-lit, polished-concrete luxury-garage mood** (from a reference
+  image), while keeping the exact same tokens and readability. All in `studio.css` so it propagates:
+  - **Atmosphere:** `body::before` now paints warm amber light-pools (a ceiling-strip glow top-right,
+    a side pool, a floor wash) + a deeper vignette; `body::after` adds a very subtle SVG-noise concrete
+    grain (overlay, .42). Base darkened to `#0b0c0e`.
+  - **Light language:** `.rule`/`.rule.full` and a new `.led` utility glow like warm LED strips; the
+    header gained a lit gold underline; `.btn-primary` and the live doorway spine glow.
+  - **Neon:** the wordmark + chevron use `drop-shadow` gold glow (works with the gradient-clipped
+    text); `.eyebrow` glows; a `.neon` text utility for accents (used on the hub footer tagline).
+  - **Biophilic:** a *procedurally generated* hanging fern (`assets/img/fern.svg`, node-drawn drooping
+    fronds — on brand: generated, not stock) sits faintly in the hero's top corners via `.foliage`.
+    Decorative, `aria-hidden`, dimmed further on mobile/reduced-motion.
+- Contrast preserved/improved (darker base). SW bumped to **v9** and caches `fern.svg`.
+- **Deployed:** pushed to `origin/main` (`github.com/djonno2000/Decamp_Designs_Luxury_Prerunner`).
+
 ## Phase 6–7 — Cinematic layer + polish (2026-06-29)
 
 - **Restraint over spectacle.** Per the brief's rules, the cinematic layer is a few *earned* moments,

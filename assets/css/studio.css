@@ -73,17 +73,28 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 body{
   margin:0; min-height:100vh; color:var(--bone); color-scheme:dark;
   font-family:var(--body); font-weight:400; line-height:1.55; font-size:var(--fs-body);
-  background-color:var(--night);
+  background-color:#0b0c0e;                 /* deep polished-concrete near-black */
   background-image:
-    linear-gradient(rgba(205,162,78,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(205,162,78,.035) 1px, transparent 1px);
-  background-size:30px 30px;
+    linear-gradient(rgba(205,162,78,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(205,162,78,.028) 1px, transparent 1px);
+  background-size:32px 32px;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-/* edge vignette so the blueprint grid fades out */
+/* warm LED-lit garage atmosphere: ceiling-strip glow (top-right), a soft side pool,
+   a floor wash from below, and a vignette that pulls the room dark at the edges. */
 body::before{
   content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background:radial-gradient(120% 90% at 50% 0%, transparent 42%, rgba(15,16,18,.88) 100%);
+  background:
+    radial-gradient(72% 44% at 84% -8%, rgba(205,162,78,.12), transparent 62%),
+    radial-gradient(50% 42% at 5% 40%, rgba(220,192,126,.05), transparent 60%),
+    radial-gradient(120% 72% at 50% 120%, rgba(205,162,78,.10), transparent 55%),
+    radial-gradient(125% 95% at 50% 0%, transparent 38%, rgba(6,7,9,.92) 100%);
+}
+/* fine concrete grain over everything (very subtle) */
+body::after{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.42;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
 img,svg{display:block; max-width:100%}
 a{color:inherit; text-decoration:none}
@@ -115,12 +126,31 @@ section{padding:46px 0; position:relative; z-index:1}
 
 /* eyebrow (mono, leader tick) */
 .eyebrow{font-family:var(--mono); font-size:var(--fs-eyebrow); letter-spacing:.22em;
-  text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:10px}
-.eyebrow::before{content:""; width:26px; height:1px; background:linear-gradient(90deg,var(--gold),transparent)}
+  text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:10px;
+  text-shadow:0 0 12px rgba(205,162,78,.3)}
+.eyebrow::before{content:""; width:26px; height:1px; background:linear-gradient(90deg,var(--gold),transparent);
+  box-shadow:0 0 6px rgba(205,162,78,.5)}
 
-/* machined rule */
-.rule{height:2px; width:64px; border-radius:2px; margin:18px 0 0; background:var(--heat-90)}
-.rule.full{width:100%; background:linear-gradient(90deg,transparent,var(--gold-deep),var(--gold) 50%,var(--gold-deep),transparent); opacity:.5}
+/* machined rule — now a lit LED strip */
+.rule{height:2px; width:64px; border-radius:2px; margin:18px 0 0; background:var(--heat-90);
+  box-shadow:0 0 10px rgba(205,162,78,.5), 0 0 2px rgba(220,192,126,.7)}
+.rule.full{width:100%; background:linear-gradient(90deg,transparent,var(--gold-deep),var(--gold) 50%,var(--gold-deep),transparent); opacity:.6; box-shadow:0 0 12px rgba(205,162,78,.3)}
+/* full-width warm LED light strip (ceiling/floor accent, like the reference garage) */
+.led{height:2px; width:100%; border-radius:2px; position:relative;
+  background:linear-gradient(90deg,transparent,rgba(205,162,78,.15) 8%,var(--gold) 50%,rgba(205,162,78,.15) 92%,transparent);
+  box-shadow:0 0 16px rgba(205,162,78,.35), 0 0 4px rgba(220,192,126,.5)}
+
+/* hanging foliage (biophilic garage warmth) — decorative, restrained, sits behind content */
+.foliage{position:absolute; top:-8px; width:min(250px,29vw); opacity:.4; pointer-events:none; z-index:0;
+  filter:saturate(1.1) brightness(1.2) drop-shadow(0 8px 22px rgba(0,0,0,.55))}
+.foliage.l{left:-46px; transform:scaleX(-1)}
+.foliage.r{right:-36px}
+@media (max-width:860px){ .foliage{opacity:.24; width:150px} }
+@media (prefers-reduced-motion:reduce){ .foliage{opacity:.3} }
+
+/* neon-sign text accent */
+.neon{color:var(--gold-straw);
+  text-shadow:0 0 6px rgba(205,162,78,.85), 0 0 16px rgba(205,162,78,.5), 0 0 30px rgba(205,162,78,.3)}
 
 /* datum / registration corner ticks (TL + BR) */
 .ticks{position:relative}
@@ -159,19 +189,23 @@ section{padding:46px 0; position:relative; z-index:1}
 /* chevron mark (set width/height inline or via .chev) */
 .chev{width:24px; height:24px; flex:0 0 auto}
 
-/* brushed-metal card */
+/* brushed-metal card — warm top-lit, deeper shadow (garage surface) */
 .card{position:relative; border:1px solid var(--line); border-radius:var(--r);
   background:
+    radial-gradient(130% 60% at 50% -12%, rgba(205,162,78,.07), transparent 60%),
     repeating-linear-gradient(115deg, rgba(255,255,255,.012) 0 2px, transparent 2px 5px),
     linear-gradient(180deg,var(--steel-800),var(--panel-2));
-  box-shadow:var(--shadow-deep), inset 0 1px 0 rgba(220,192,126,.08);
+  box-shadow:var(--shadow-deep), inset 0 1px 0 rgba(220,192,126,.10), 0 0 44px -22px rgba(205,162,78,.18);
   padding:22px}
 .card.pad-lg{padding:26px 24px}
 
-/* CAD title-block */
-.titleblock{position:relative; background:linear-gradient(180deg,var(--steel-800),var(--panel));
+/* CAD title-block — warm top-lit */
+.titleblock{position:relative;
+  background:
+    radial-gradient(130% 55% at 50% -10%, rgba(205,162,78,.06), transparent 60%),
+    linear-gradient(180deg,var(--steel-800),var(--panel));
   border:1px solid var(--line); border-radius:var(--r); padding:22px 22px 16px;
-  box-shadow:var(--shadow-deep), inset 0 1px 0 rgba(220,192,126,.08)}
+  box-shadow:var(--shadow-deep), inset 0 1px 0 rgba(220,192,126,.10), 0 0 44px -24px rgba(205,162,78,.16)}
 .titleblock .tbhead{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
 .titleblock .tbhead .id{font-family:var(--mono); font-size:11px; color:var(--mute); letter-spacing:.12em}
 .titleblock h3{font-size:19px; color:var(--bone); letter-spacing:.06em}
@@ -199,18 +233,23 @@ section{padding:46px 0; position:relative; z-index:1}
 .btn svg{transition:transform var(--t-med) var(--ease)}
 .btn:hover{border-color:rgba(205,162,78,.5)}
 .btn:hover svg{transform:translateX(4px)}
-.btn-primary{color:var(--night); background:var(--heat); border-color:transparent}
-.btn-primary:hover{filter:brightness(1.06); border-color:transparent}
+.btn-primary{color:var(--night); background:var(--heat); border-color:transparent;
+  box-shadow:0 0 22px -6px rgba(205,162,78,.55)}
+.btn-primary:hover{filter:brightness(1.06); border-color:transparent; box-shadow:0 0 28px -4px rgba(205,162,78,.7)}
 .btn-ghost{background:transparent}
 .btn-ghost:hover{background:var(--panel); color:var(--bone)}
 
 /* ---- 7. SITE CHROME (header / nav / footer) ----------------------------- */
-header.site{position:sticky; top:0; z-index:20; background:rgba(15,16,18,.72);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+header.site{position:sticky; top:0; z-index:20; background:rgba(9,10,12,.74);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(205,162,78,.18);
+  box-shadow:0 1px 0 rgba(205,162,78,.10), 0 14px 34px -20px rgba(0,0,0,.85)}
 header.site .bar{display:flex; align-items:center; gap:16px; padding:13px 0}
 .brand{display:flex; align-items:center; gap:11px; font-family:var(--head); font-weight:700;
-  text-transform:uppercase; letter-spacing:.14em; font-size:18px}
-.brand .word{background:var(--heat); -webkit-background-clip:text; background-clip:text; color:transparent}
+  text-transform:uppercase; letter-spacing:.11em; font-size:18px; white-space:nowrap}
+.brand .chev{filter:drop-shadow(0 0 6px rgba(205,162,78,.45))}
+.brand .word{background:var(--heat); -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 0 8px rgba(205,162,78,.5))}
 nav.site{margin-left:auto; display:flex; gap:6px; flex-wrap:wrap}
 nav.site a{font-family:var(--head); text-transform:uppercase; letter-spacing:.08em; font-weight:600;
   font-size:13.5px; color:var(--mute); padding:7px 12px; border:1px solid transparent; border-radius:var(--r-sm);
@@ -255,7 +294,8 @@ footer.site .meta .tagline{color:var(--ink-3)}
 a.door:hover, a.door:focus-visible{transform:translateY(-5px); border-color:rgba(205,162,78,.55);
   box-shadow:var(--shadow), 0 0 0 1px rgba(205,162,78,.18)}
 a.door:hover .go svg, a.door:focus-visible .go svg{transform:translateX(5px)}
-.door.live::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--heat)}
+.door.live::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--heat);
+  box-shadow:0 0 14px rgba(205,162,78,.6)}
 .door[aria-disabled="true"]{cursor:default}
 
 /* roadmap / in-development doorways (smaller, dashed) */
