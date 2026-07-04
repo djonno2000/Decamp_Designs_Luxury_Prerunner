@@ -11,8 +11,12 @@ The Build Lab was refreshed to the latest r4 (measured frame record, 760 mm fuel
 table), and the LS-exhaust material was integrated as two Notebook articles with the engine reframed
 **naturally-aspirated-likely**.
 
-**Only remaining deploy step:** enable **GitHub Pages** on the repo (Settings → Pages → Deploy from a
-branch → `main` / root). After that, every future change is a one-line `git push`.
+**LIVE:** https://djonno2000.github.io/Decamp_Designs_Luxury_Prerunner/ — the repo was made **public**
+(free GitHub Pages doesn't serve private repos) and Pages enabled on `main`/root. The site stays
+**unlisted** (every page `noindex,nofollow` + `robots.txt`), and the business plan / source notes /
+raw data were never pushed (git-ignored). Every future change now goes live with a single `git push`.
+If you'd rather keep the repo private later: move hosting to Netlify/Cloudflare Pages, or upgrade to
+GitHub Pro and flip the repo back to private.
 
 ## What's built (quick map)
 - **Site:** `index.html` (hub + 3D spaceframe hero), `trophy-truck.html`, `driftcast/` (platform +
