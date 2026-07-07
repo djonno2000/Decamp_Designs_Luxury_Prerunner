@@ -6,7 +6,7 @@
  *     site (incl. hashed font woff2 subsets) is available offline after the first online visit.
  * Bump CACHE_VERSION whenever shell files change to force a clean update.
  */
-const CACHE_VERSION = 'studio-v9-2026-07-02';
+const CACHE_VERSION = 'studio-v10-2026-07-07';
 const CACHE = CACHE_VERSION;
 
 // Atomic: install fails (and old SW stays) if any of these can't be fetched.
@@ -39,6 +39,7 @@ const EXTENDED = [
   './notebook/drift-dynamics.html',
   './notebook/ls-exhaust.html',
   './notebook/forced-induction-ls.html',
+  './notebook/systems-packaging.html',
   // notebook schematics
   './notebook/schematics/roll-control-cross-link.svg',
   './notebook/schematics/diff-mounted-swaybar.svg',
@@ -50,6 +51,7 @@ const EXTENDED = [
   './notebook/schematics/megaphone-construction-diagram.svg',
   './notebook/schematics/ls-exhaust-stage-map.svg',
   './notebook/schematics/exhaust-routing-diagram.svg',
+  './notebook/schematics/cooling-exits.svg',
   // data modules
   './assets/data/types.js',
   './assets/data/engines.js',

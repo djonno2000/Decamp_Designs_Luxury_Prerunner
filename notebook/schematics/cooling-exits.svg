@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d6fe0"/></marker>
+  </defs>
+  <rect width="900" height="520" fill="#f6f7f9"/>
+  <text x="34" y="42" font-size="21" font-weight="700" fill="#1a2230">Cooling exits — two 7″ openings, air out around the tyre</text>
+  <text x="34" y="64" font-size="13" fill="#6b7280">Rear-quarter · conceptual — one exit for the radiator, one for the transmission coolers</text>
+
+  <!-- body panel -->
+  <rect x="70" y="110" width="760" height="360" rx="16" fill="#eef0f3" stroke="#c3c8d0" stroke-width="2"/>
+
+  <!-- wheel arch + tyre -->
+  <path d="M470 470 A150 150 0 0 1 770 470" fill="#e4e7ec" stroke="#aeb4bd" stroke-width="2"/>
+  <circle cx="620" cy="470" r="118" fill="#2b2f36"/>
+  <circle cx="620" cy="470" r="70" fill="#3a3f47"/>
+  <circle cx="620" cy="470" r="26" fill="#5a5f68"/>
+  <text x="620" y="474" font-size="12" fill="#cfd3da" text-anchor="middle" font-family="monospace">37″</text>
+
+  <!-- source boxes -->
+  <rect x="96" y="176" width="128" height="60" rx="8" fill="#fff" stroke="#c0392b" stroke-width="2"/>
+  <text x="160" y="205" font-size="13" font-weight="700" fill="#c0392b" text-anchor="middle">RADIATOR</text>
+  <text x="160" y="223" font-size="11" fill="#8a5a55" text-anchor="middle">hot air</text>
+
+  <rect x="96" y="316" width="128" height="60" rx="8" fill="#fff" stroke="#1d6fe0" stroke-width="2"/>
+  <text x="160" y="345" font-size="13" font-weight="700" fill="#1d6fe0" text-anchor="middle">TRANS COOLERS</text>
+  <text x="160" y="363" font-size="11" fill="#4a6a95" text-anchor="middle">hot air</text>
+
+  <!-- 7in openings -->
+  <circle cx="392" cy="206" r="36" fill="#fde9e7" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="392" y="210" font-size="12" font-weight="700" fill="#c0392b" text-anchor="middle">7″</text>
+  <circle cx="392" cy="346" r="36" fill="#e7f0fd" stroke="#1d6fe0" stroke-width="2.5"/>
+  <text x="392" y="350" font-size="12" font-weight="700" fill="#1d6fe0" text-anchor="middle">7″</text>
+
+  <!-- airflow: source -> opening -> curve out around the tyre -->
+  <path d="M226 206 L350 206" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#ar)"/>
+  <path d="M430 200 Q560 150 700 214" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#ar)"/>
+
+  <path d="M226 346 L350 346" fill="none" stroke="#1d6fe0" stroke-width="3" marker-end="url(#ab)"/>
+  <path d="M430 352 Q560 400 690 360" fill="none" stroke="#1d6fe0" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#ab)"/>
+
+  <!-- labels -->
+  <text x="392" y="150" font-size="12" fill="#6b7280" text-anchor="middle">radiator exit</text>
+  <text x="392" y="404" font-size="12" fill="#6b7280" text-anchor="middle">cooler exit</text>
+  <text x="742" y="292" font-size="12.5" fill="#3a4150" text-anchor="middle" font-style="italic">air escapes<tspan x="742" dy="16">around the tyre</tspan></text>
+</svg>

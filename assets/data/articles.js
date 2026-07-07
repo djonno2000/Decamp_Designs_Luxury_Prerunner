@@ -36,6 +36,13 @@ export const articles = [
     summary: 'The cheap forced-induction paths for an LS3, the junkyard LSA blower, and the honest question — does a desert prerunner even need boost, or does a well-built NA LS finish more races?',
     updated: '2026-06', status: 'published',
   },
+  {
+    slug: 'systems-packaging', title: 'Plumbing, power & cooling, packaged driver-first', vertical: 'trophy-truck',
+    tags: ['fabrication', 'plumbing', 'cooling', 'electrical', 'ecu'],
+    confidence: 'Heard on an RJ Fab build video (Willys AWD)',
+    summary: 'Driver-first systems packaging from RJ Fab: boat-sided for room, a brewery of plumbing routed in order, twin 7-inch cooling exits, an Accusump low, and the right ECU — a Holley Dominator, not an HP.',
+    updated: '2026-07', status: 'published',
+  },
   // --- scaffolded stubs (bodies to come) ---
   { slug: 'bypass-rebound-tuning', title: 'Bypass rebound: where the truck settles', vertical: 'trophy-truck',
     tags: ['suspension', 'bypass-shock', 'tuning'], summary: 'Reading and tuning the rebound zones of a bypass shock so the truck recovers without packing down.', updated: '2026-06', status: 'stub' },
